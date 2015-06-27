@@ -563,6 +563,7 @@ var/global/floorIsLava = 0
 			r = copytext( r, 1, findtext(r,"##") )//removes the description
 		dat += text("<tr><td>[t] (<A href='?src=\ref[src];removejobban=[r]'>unban</A>)</td></tr>")
 	dat += "</table>"
+	dat = russian_browser(dat)
 	usr << browse(dat, "window=ban;size=400x400")
 
 /datum/admins/proc/Game()
@@ -725,10 +726,10 @@ var/global/floorIsLava = 0
 	set desc="Announce your desires to the world"
 	if(!check_rights(0))	return
 
-	var/message = input("Global message to send:", "Admin Announce", null, null)  as message
+	var/message = input("Global message to send:", "Admin Announce", null, null) as text
 	if(message)
-		if(!check_rights(R_SERVER,0))
-			message = adminscrub(message,500)
+		//if(check_rights(R_SERVER))
+		message = sanitize(message)
 		world << "\blue <b>[usr.client.holder.fakekey ? "Administrator" : usr.key] Announces:</b>\n \t [message]"
 		log_admin("Announce: [key_name(usr)] : [message]")
 	feedback_add_details("admin_verb","A") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!

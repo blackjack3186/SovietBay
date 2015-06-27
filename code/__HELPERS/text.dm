@@ -34,9 +34,20 @@
 	return t
 
 //Removes a few problematic characters
-/proc/sanitize_simple(var/t,var/list/repl_chars = list("\n"="#","\t"="#"))
+/proc/sanitize_simple(var/t,var/list/repl_chars = list("\t"="#","ÿ"="&#255;"))
 	for(var/char in repl_chars)
 		t = replacetext(t, char, repl_chars[char])
+	return t
+
+/proc/russian_browser(var/t)//so russian
+	t = replacetext(t, "ÿ", "&#x44F;")
+	t = replacetext(t, "&#255;", "&#x44F;")
+	return t
+
+/proc/logRu(var/t)//cuz logs must be clean
+	t = replacetext(t, "&#x44F;", "ß")
+	t = replacetext(t, "&#255;", "ß")
+	t = replacetext(t, "ÿ;", "ß")
 	return t
 
 /proc/readd_quotes(var/t)
@@ -50,7 +61,7 @@
 
 //Runs byond's sanitization proc along-side sanitize_simple
 /proc/sanitize(var/t,var/list/repl_chars = null)
-	return html_encode(sanitize_simple(t,repl_chars))
+	return sanitize_simple(t,repl_chars)//html_encode() hates letter ß
 
 //Runs sanitize and strip_html_simple
 //I believe strip_html_simple() is required to run first to prevent '<' from displaying as '&lt;' after sanitize() calls byond's html_encode()
@@ -60,7 +71,7 @@
 //Runs byond's sanitization proc along-side strip_html_simple
 //I believe strip_html_simple() is required to run first to prevent '<' from displaying as '&lt;' that html_encode() would cause
 /proc/adminscrub(var/t,var/limit=MAX_MESSAGE_LEN)
-	return copytext((html_encode(strip_html_simple(t))),1,limit)
+	return copytext((strip_html_simple(t)),1,limit)
 
 
 //Returns null if there is any bad text in the string

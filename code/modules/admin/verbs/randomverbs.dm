@@ -56,6 +56,7 @@
 
 	if (!msg)
 		return
+	msg = sanitize(msg)
 	if(usr)
 		if (usr.client)
 			if(usr.client.holder)
@@ -113,6 +114,7 @@
 
 	if (!msg)
 		return
+	msg = sanitize(msg)
 	world << "[msg]"
 	log_admin("GlobalNarrate: [key_name(usr)] : [msg]")
 	message_admins("\blue \bold GlobalNarrate: [key_name_admin(usr)] : [msg]<BR>", 1)
@@ -136,7 +138,7 @@
 
 	if( !msg )
 		return
-
+	msg = sanitize(msg)
 	M << msg
 	log_admin("DirectNarrate: [key_name(usr)] to ([M.name]/[M.key]): [msg]")
 	message_admins("\blue \bold DirectNarrate: [key_name(usr)] to ([M.name]/[M.key]): [msg]<BR>", 1)
@@ -940,3 +942,26 @@ Traitors and the like can also be revived with the previous role mostly intact.
 		usr << "Random events disabled"
 		message_admins("Admin [key_name_admin(usr)] has disabled random events.", 1)
 	feedback_add_details("admin_verb","TRE") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+
+/client/proc/load_map()
+	set category = "Fun"
+	set name = "Load Map"
+	if(!holder)
+		src << "Only administrators may use this command."
+		return
+
+	if(!check_rights(R_FUN))	return
+	var/map = input("Pick file:","File") as file|null
+	if(!map)
+		return
+	if(isfile(map))
+		log_admin("[key_name(usr)] start loading map [map].")
+		message_admins("[key_name(usr)] start loading map [map].", 1)
+		maploader.load_map(map)
+		for(var/obj/effect/landmark/L in landmarks_list)
+			if (L.name != "awaystart")
+				continue
+			awaydestinations.Add(L)
+	log_admin("[key_name(usr)] loaded map [map].")
+	message_admins("[key_name(usr)] loaded map [map].", 1)
+	feedback_add_details("admin_verb","LOADMAP") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!

@@ -80,10 +80,10 @@
 
 /obj/item/weapon/paper/proc/show_content(var/mob/user, var/forceshow=0)
 	if(!(istype(user, /mob/living/carbon/human) || istype(user, /mob/dead/observer) || istype(user, /mob/living/silicon)) && !forceshow)
-		user << browse("<HTML><HEAD><TITLE>[name]</TITLE></HEAD><BODY>[stars(info)][stamps]</BODY></HTML>", "window=[name]")
+		user << browse("<HTML><HEAD><TITLE>[russian_browser(name)]</TITLE></HEAD><BODY>[stars(russian_browser(info))][stamps]</BODY></HTML>", "window=[name]")
 		onclose(user, "[name]")
 	else
-		user << browse("<HTML><HEAD><TITLE>[name]</TITLE></HEAD><BODY>[info][stamps]</BODY></HTML>", "window=[name]")
+		user << browse("<HTML><HEAD><TITLE>[russian_browser(name)]</TITLE></HEAD><BODY>[russian_browser(info)][stamps]</BODY></HTML>", "window=[name]")
 		onclose(user, "[name]")
 
 /obj/item/weapon/paper/verb/rename()
@@ -119,10 +119,10 @@
 	else //cyborg or AI not seeing through a camera
 		dist = get_dist(src, user)
 	if(dist < 2)
-		usr << browse("<HTML><HEAD><TITLE>[name]</TITLE></HEAD><BODY>[info][stamps]</BODY></HTML>", "window=[name]")
+		usr << browse("<HTML><HEAD><TITLE>[russian_browser(name)]</TITLE></HEAD><BODY>[russian_browser(info)][stamps]</BODY></HTML>", "window=[name]")
 		onclose(usr, "[name]")
 	else
-		usr << browse("<HTML><HEAD><TITLE>[name]</TITLE></HEAD><BODY>[stars(info)][stamps]</BODY></HTML>", "window=[name]")
+		usr << browse("<HTML><HEAD><TITLE>[russian_browser(name)]</TITLE></HEAD><BODY>[stars(russian_browser(info))][stamps]</BODY></HTML>", "window=[name]")
 		onclose(usr, "[name]")
 	return
 
@@ -367,7 +367,7 @@
 */
 		var last_fields_value = fields
 
-		t = html_encode(t)
+//		t = html_encode(t)
 		t = replacetext(t, "\n", "<BR>")
 		t = parsepencode(t, i, usr, iscrayon) // Encode everything from pencode to html
 
@@ -385,7 +385,7 @@
 
 		update_space(t)
 
-		usr << browse("<HTML><HEAD><TITLE>[name]</TITLE></HEAD><BODY>[info_links][stamps]</BODY></HTML>", "window=[name]") // Update the window
+		usr << browse("<HTML><HEAD><TITLE>[russian_browser(name)]</TITLE></HEAD><BODY>[russian_browser(info_links)][stamps]</BODY></HTML>", "window=[name]") // Update the window
 
 		update_icon()
 
@@ -451,7 +451,7 @@
 		if ( istype(P, /obj/item/weapon/pen/robopen) && P:mode == 2 )
 			P:RenamePaper(user,src)
 		else
-			user << browse("<HTML><HEAD><TITLE>[name]</TITLE></HEAD><BODY>[info_links][stamps]</BODY></HTML>", "window=[name]")
+			user << browse("<HTML><HEAD><TITLE>[russian_browser(name)]</TITLE></HEAD><BODY>[russian_browser(info_links)][stamps]</BODY></HTML>", "window=[name]")
 		//openhelp(user)
 		return
 

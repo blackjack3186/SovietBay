@@ -167,7 +167,7 @@ var/savefile/Banlist
 
 /datum/admins/proc/unbanpanel()
 	var/count = 0
-	var/dat
+	var/bans
 	//var/dat = "<HR><B>Unban Player:</B> \blue(U) = Unban , (E) = Edit Ban\green (Total<HR><table border=1 rules=all frame=void cellspacing=0 cellpadding=3 >"
 	Banlist.cd = "/base"
 	for (var/A in Banlist.dir)
@@ -185,10 +185,9 @@ var/savefile/Banlist
 			if(!expiry)		expiry = "Removal Pending"
 		else				expiry = "Permaban"
 
-		dat += text("<tr><td><A href='?src=[ref];unbanf=[key][id]'>(U)</A><A href='?src=[ref];unbane=[key][id]'>(E)</A> Key: <B>[key]</B></td><td>ComputerID: <B>[id]</B></td><td>IP: <B>[ip]</B></td><td> [expiry]</td><td>(By: [by])</td><td>(Reason: [reason])</td></tr>")
-
-	dat += "</table>"
-	dat = "<HR><B>Bans:</B> <FONT COLOR=blue>(U) = Unban , (E) = Edit Ban</FONT> - <FONT COLOR=green>([count] Bans)</FONT><HR><table border=1 rules=all frame=void cellspacing=0 cellpadding=3 >[dat]"
+		bans += text("<tr><td><A href='?src=[ref];unbanf=[key][id]'>(U)</A><A href='?src=[ref];unbane=[key][id]'>(E)</A> Key: <B>[key]</B></td><td>ComputerID: <B>[id]</B></td><td>IP: <B>[ip]</B></td><td> [expiry]</td><td>(By: [by])</td><td>(Reason: [reason])</td></tr>")
+	var/dat = "<HR><B>Bans:</B> <FONT COLOR=blue>(U) = Unban , (E) = Edit Ban</FONT> - <FONT COLOR=green>([count] Bans)</FONT><HR><table border=1 rules=all frame=void cellspacing=0 cellpadding=3 >[bans]</table>"
+	dat = russian_browser(dat)
 	usr << browse(dat, "window=unbanp;size=875x400")
 
 //////////////////////////////////// DEBUG ////////////////////////////////////

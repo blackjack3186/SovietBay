@@ -79,7 +79,8 @@ var/list/admin_verbs_admin = list(
 	/client/proc/toggle_antagHUD_restrictions,
 	/client/proc/allow_character_respawn,    /* Allows a ghost to respawn */
 	/client/proc/event_manager_panel,
-	/client/proc/empty_ai_core_toggle_latejoin
+	/client/proc/empty_ai_core_toggle_latejoin,
+	/client/proc/cmd_assume_direct_control
 )
 var/list/admin_verbs_ban = list(
 	/client/proc/unban_panel,
@@ -104,7 +105,8 @@ var/list/admin_verbs_fun = list(
 	/client/proc/cmd_admin_add_random_ai_law,
 	/client/proc/make_sound,
 	/client/proc/toggle_random_events,
-	/client/proc/editappear
+	/client/proc/editappear,
+	/client/proc/load_map
 	)
 var/list/admin_verbs_spawn = list(
 	/datum/admins/proc/spawn_fruit,

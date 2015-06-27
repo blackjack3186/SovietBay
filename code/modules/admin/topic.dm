@@ -360,6 +360,7 @@
 				reason = input(usr,"Reason?","reason",reason2) as text|null
 				if(!reason)	return
 
+		reason = sanitize(reason)
 		log_admin("[key_name(usr)] edited [banned_key]'s ban. Reason: [reason] Duration: [duration]")
 		ban_unban_log_save("[key_name(usr)] edited [banned_key]'s ban. Reason: [reason] Duration: [duration]")
 		message_admins("\blue [key_name_admin(usr)] edited [banned_key]'s ban. Reason: [reason] Duration: [duration]", 1)
@@ -745,7 +746,7 @@
 					var/reason = input(usr,"Reason?","Please State Reason","") as text|null
 					if(!reason)
 						return
-
+					reason = sanitize(reason)
 					var/msg
 					for(var/job in notbannedlist)
 						ban_unban_log_save("[key_name(usr)] temp-jobbanned [key_name(M)] from [job] for [mins] minutes. reason: [reason]")
@@ -769,6 +770,7 @@
 					if(!check_rights(R_BAN))  return
 					var/reason = input(usr,"Reason?","Please State Reason","") as text|null
 					if(reason)
+						reason = sanitize(reason)
 						var/msg
 						for(var/job in notbannedlist)
 							ban_unban_log_save("[key_name(usr)] perma-jobbanned [key_name(M)] from [job]. reason: [reason]")
@@ -866,6 +868,7 @@
 				var/reason = input(usr,"Reason?","reason","Griefer") as text|null
 				if(!reason)
 					return
+				reason = sanitize(reason)
 				AddBan(M.ckey, M.computer_id, reason, usr.ckey, 1, mins)
 				ban_unban_log_save("[usr.client.ckey] has banned [M.ckey]. - Reason: [reason] - This will be removed in [mins] minutes.")
 				notes_add(M.ckey,"[usr.client.ckey] has banned [M.ckey]. - Reason: [reason] - This will be removed in [mins] minutes.",usr)
@@ -888,6 +891,7 @@
 				var/reason = input(usr,"Reason?","reason","Griefer") as text|null
 				if(!reason)
 					return
+				reason = sanitize(reason)
 				switch(alert(usr,"IP ban?",,"Yes","No","Cancel"))
 					if("Cancel")	return
 					if("Yes")

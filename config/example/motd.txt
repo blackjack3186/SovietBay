@@ -1,5 +1,5 @@
-<h1>Welcome to Space Station 13!</h1>
+<h1>Welcome to United Kingdom of Soviet Station 13!</h1>
+Приветствуем вас на Советской Станции 13. Правила сервера обЯзательны к ознакомлению, их вы можете увидет во вкладке "Rules" вверху. Так же вы можете перейти на нашу вики и форум с помощью вкладок "Wiki" и "Forum" соответственно.
 
--<i>This server is running <a href="http://baystation12.net/">Baystation 12's</a> modification of the <a href="http://ss13.eu/">/tg/station13</a> SS13 code.</i>
-<br><br>
-<strong>Bugtracker:</strong> <a href="http://baystation12.net/forums/viewtopic.php?f=18&t=8185">http://baystation12.net/forums/viewtopic.php?f=18&t=8185</a>
+<font color="blue">Слава Королевству!</font>
+КаждаЯ пЯтница - <b>День Одного Режима</b>. Подробности и голосование на форуме! http://sovietstation.ru/index.php?showtopic=4488
