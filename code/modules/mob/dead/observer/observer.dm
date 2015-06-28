@@ -462,6 +462,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 			see_invisible = SEE_INVISIBLE_OBSERVER
 			usr << "<span class='notice'>Now you can see darkness.</span>"
 		else
+			see_invisible = SEE_INVISIBLE_OBSERVER_NOLIGHTING
 			usr << "<span class='notice'>You no longer see darkness.</span>"
 
 /mob/dead/observer/verb/become_mouse()

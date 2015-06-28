@@ -3,7 +3,7 @@
 	desc = "A man portable anti-armor weapon designed to disable mechanical threats"
 	icon_state = "ionrifle"
 	item_state = "ionrifle"
-	fire_sound = 'sound/weapons/Laser.ogg'
+	fire_sound = 'sound/weapons/ion.ogg'
 	origin_tech = "combat=2;magnets=4"
 	w_class = 4
 	force = 10
@@ -97,6 +97,7 @@
 /obj/item/weapon/gun/energy/mindflayer
 	name = "mind flayer"
 	desc = "A prototype weapon recovered from the ruins of Research-Station Epsilon."
+	icon = 'icons/obj/gun_alt.dmi'
 	icon_state = "xray"
 	projectile_type = /obj/item/projectile/beam/mindflayer
 	fire_sound = 'sound/weapons/Laser.ogg'
@@ -161,6 +162,28 @@ obj/item/weapon/gun/energy/staff/focus
 			user << "<span class='warning'>The [src.name] will now strike only a single person.</span>"
 			projectile_type = "/obj/item/projectile/forcebolt"
 	*/
+
+/obj/item/weapon/gun/energy/kinetic_accelerator
+	name = "proto-kinetic accelerator"
+	desc = "According to Nanotrasen accounting, this is mining equipment. It's been modified for extreme power output to crush rocks, but often serves as a miner's first defense against hostile alien life; it's not very powerful unless used in a low pressure environment."
+	icon_state = "kineticgun"
+	item_state = "kineticgun"
+	projectile_type = /obj/item/projectile/kinetic
+	cell_type = /obj/item/weapon/cell/crap
+	charge_cost = 100
+	self_recharge = 1
+
+/obj/item/weapon/gun/energy/kinetic_accelerator/cyborg
+	charge_cost = 50
+
+/obj/item/weapon/gun/energy/radgun
+	name = "radgun"
+	desc = "An experimental energy gun that fires radioactive projectiles that deal toxin damage, irradiate, and scramble DNA, giving the victim a different appearance and name, and potentially harmful or beneficial mutations. Recharges automatically."
+	icon_state = "radgun"
+	fire_sound = 'sound/weapons/radgun.ogg'
+	charge_cost = 100
+	self_recharge = 1
+	projectile_type = /obj/item/projectile/energy/rad
 
 /* Adminbus guns */
 

@@ -138,6 +138,66 @@
 			M.adjustBrainLoss(20)
 			M.hallucination += 20
 
+/obj/item/projectile/kinetic
+	name = "kinetic force"
+	icon_state = "energy"
+	damage = 10
+	damage_type = BRUTE
+
+obj/item/projectile/kinetic/New()
+	var/turf/proj_turf = get_turf(src)
+	if(!istype(proj_turf, /turf))
+		return
+	var/datum/gas_mixture/environment = proj_turf.return_air()
+	var/pressure = environment.return_pressure()
+	if(pressure < 50)
+		name = "full strength kinetic force"
+		damage = 30
+	..()
+
+/obj/item/projectile/kinetic/on_hit(var/atom/target, var/blocked = 0)
+	if(!loc) return
+	var/turf/target_turf = get_turf(target)
+	if(istype(target_turf, /turf/simulated/mineral))
+		var/turf/simulated/mineral/M = target_turf
+		M.GetDrilled()
+	new /obj/item/effect/kinetic_blast(target_turf)
+	..(target,blocked)
+
+/obj/item/projectile/kinetic/Bump(atom/A as mob|obj|turf|area)
+	if(!loc) return
+	if(A == firer)
+		loc = A.loc
+		return
+
+	if(src)//Do not add to this if() statement, otherwise the meteor won't delete them
+
+		if(A)
+			var/turf/target_turf = get_turf(A)
+			//testing("Bumped [A.type], on [target_turf.type].")
+			if(istype(target_turf, /turf/simulated/mineral))
+				var/turf/simulated/mineral/M = target_turf
+				M.GetDrilled()
+				new /obj/item/effect/kinetic_blast(target_turf)
+			// Now we bump as a bullet, if the atom is a non-turf.
+			if(!isturf(A))
+				..(A)
+			del(src) // Comment this out if you want to shoot through the asteroid, ERASER-style.
+			return 1
+	else
+		del(src)
+		return 0
+
+/obj/item/effect/kinetic_blast
+	name = "kinetic explosion"
+	icon = 'icons/obj/projectiles.dmi'
+	icon_state = "kinetic_blast"
+	layer = 4.1
+
+/obj/item/effect/kinetic_blast/New()
+	spawn(4)
+		del(src)
+
 /obj/item/projectile/icarus/pointdefense/process()
 	Icarus_FireLaser(get_turf(original))
 	spawn

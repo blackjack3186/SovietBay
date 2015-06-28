@@ -53,7 +53,7 @@
 	var/speaker_info = null
 	if(istype(src, /mob/dead/observer))
 		if(ismob(speaker))
-			speaker_info = "<a href='?src=\ref[src];speakerinfo=\ref[speaker]'>(?)</a> "
+			speaker_info = "(<a href='?src=\ref[src];speakerinfo=\ref[speaker]'>?</a>) "
 		if(italics && client.prefs.toggles & CHAT_GHOSTRADIO)
 			return
 		if(speaker_name != speaker.real_name && speaker.real_name)

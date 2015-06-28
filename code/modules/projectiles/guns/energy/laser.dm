@@ -19,18 +19,46 @@
 /obj/item/weapon/gun/energy/laser/practice
 	name = "practice laser gun"
 	desc = "A modified version of the basic laser gun, this one fires less concentrated energy bolts designed for target practice."
+	icon_state = "oldlaser"
 	projectile_type = /obj/item/projectile/beam/practice
 
-obj/item/weapon/gun/energy/retro
+/obj/item/weapon/gun/energy/laser/pistol
+	name = "laser pistol"
+	desc = "A laser pistol issued to high ranking members of a certain shadow corporation."
+	icon_state = "xcomlaserpistol"
+	projectile_type = /obj/item/projectile/beam
+	charge_cost = 100 // holds less "ammo" then the rifle variant.
+
+/obj/item/weapon/gun/energy/laser/rifle
+	name = "laser rifle"
+	desc = "A laser rifle issued to high ranking members of a certain shadow corporation."
+	icon_state = "xcomlasergun"
+	projectile_type = /obj/item/projectile/beam
+	charge_cost = 50
+
+/obj/item/weapon/gun/energy/laser/adminlaser
+	name = "infinite laser gun"
+	desc = "Spray and /pray."
+	icon_state = "adminlaser"
+	projectile_type = /obj/item/projectile/beam
+	charge_cost = 0
+
+	update_icon()
+		return
+
+obj/item/weapon/gun/energy/laser/retrolaser
 	name = "retro laser"
 	icon_state = "retro"
 	item_state = "retro"
 	desc = "An older model of the basic lasergun, no longer used by Nanotrasen's security or military forces. Nevertheless, it is still quite deadly and easy to maintain, making it a favorite amongst pirates and other outlaws."
-	fire_sound = 'sound/weapons/Laser.ogg'
-	slot_flags = SLOT_BELT
-	w_class = 3
-	projectile_type = /obj/item/projectile/beam
 	fire_delay = 10 //old technology
+
+/obj/item/weapon/gun/energy/laser/LaserAK
+	name = "Laser AK470"
+	desc = "A laser AK. Death solves all problems -- No man, no problem."
+	icon_state = "LaserAK"
+	projectile_type = /obj/item/projectile/beam
+	charge_cost = 75
 
 /obj/item/weapon/gun/energy/captain
 	name = "antique laser gun"
@@ -41,7 +69,7 @@ obj/item/weapon/gun/energy/retro
 	fire_sound = 'sound/weapons/Laser.ogg'
 	slot_flags = SLOT_BELT
 	w_class = 3
-	projectile_type = /obj/item/projectile/beam
+	projectile_type = /obj/item/projectile/beam/captain
 	origin_tech = null
 	charge_cost = 200 //to compensate a bit for self-recharging
 	self_recharge = 1
@@ -50,7 +78,6 @@ obj/item/weapon/gun/energy/retro
 	name = "laser cannon"
 	desc = "With the laser cannon, the lasing medium is enclosed in a tube lined with uranium-235 and subjected to high neutron flux in a nuclear reactor core. This incredible technology may help YOU achieve high excitation rates with small laser volumes!"
 	icon_state = "lasercannon"
-	item_state = null
 	fire_sound = 'sound/weapons/lasercannonfire.ogg'
 	origin_tech = "combat=4;materials=3;powerstorage=3"
 	slot_flags = SLOT_BELT|SLOT_BACK
@@ -97,6 +124,43 @@ obj/item/weapon/gun/energy/retro
 	set popup_menu = 1
 
 	toggle_scope(2.0)
+
+/obj/item/weapon/gun/energy/plasma
+	name = "plasma gun"
+	desc = "A high-power plasma gun. You shouldn't ever see this."
+	icon_state = "xray"
+	fire_sound = 'sound/weapons/elecfire.ogg'
+	origin_tech = "combat=5;materials=3;magnets=2"
+	projectile_type = /obj/item/projectile/energy/plasma
+	charge_cost = 50
+
+/obj/item/weapon/gun/energy/plasma/pistol
+	name = "plasma pistol"
+	desc = "Plasma pistol that is given to members of an unknown shadow organization."
+	icon_state = "alienpistol"
+	projectile_type = /obj/item/projectile/energy/plasma/pistol
+	charge_cost = 50
+
+/obj/item/weapon/gun/energy/plasma/light
+	name = "light plasma rifle"
+	desc = "Light plasma rifle that is given to members of an unknown shadow organization."
+	icon_state = "lightalienrifle"
+	projectile_type = /obj/item/projectile/energy/plasma/light
+	charge_cost = 100
+
+/obj/item/weapon/gun/energy/plasma/rifle
+	name = "plasma rifle"
+	desc = "Plasma rifle that is given to members of an unknown shadow organization."
+	icon_state = "alienrifle"
+	projectile_type = /obj/item/projectile/energy/plasma/rifle
+	charge_cost = 150
+
+/obj/item/weapon/gun/energy/plasma/MP40k
+	name = "Plasma MP40k"
+	desc = "A plasma MP40k. Ich liebe den geruch von plasma am morgen."
+	icon_state = "PlasMP"
+	projectile_type = /obj/item/projectile/energy/plasma/MP40k
+	charge_cost = 75
 
 ////////Laser Tag////////////////////
 
