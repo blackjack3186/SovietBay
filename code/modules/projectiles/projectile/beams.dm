@@ -12,7 +12,7 @@ var/list/beam_master = list()
 	name = "laser"
 	icon_state = "laser"
 	pass_flags = PASSTABLE | PASSGLASS | PASSGRILLE
-	damage = 40
+	damage = 30
 	damage_type = BURN
 	check_armour = "laser"
 	eyeblur = 4
@@ -80,6 +80,10 @@ var/list/beam_master = list()
 			for(var/turf/T in turfs)
 				T.overlays -= beam_master[laser_state]
 	return
+
+/obj/item/projectile/beam/captain
+	name = "captain laser"
+	damage = 40
 
 /obj/item/projectile/beam/practice
 	name = "laser"
@@ -172,8 +176,17 @@ var/list/beam_master = list()
 
 /obj/item/projectile/beam/stun
 	name = "stun beam"
-	icon_state = "stun"
+	icon_state = "bluelaser"
 	nodamage = 1
 	taser_effect = 1
 	agony = 40
 	damage_type = HALLOSS
+
+/obj/item/projectile/beam/stun/electrode
+	icon_state = "stun"
+	nodamage = 0
+	damage_type = BURN
+	damage = 10
+	stun = 10
+	weaken = 10
+	stutter = 10

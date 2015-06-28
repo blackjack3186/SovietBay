@@ -98,22 +98,11 @@ var/religion_name = null
 
 
 	if (config && config.server_name)
-		world.name = "[config.server_name]: [name]"
+		world.name = "[config.server_name]: [station_name]"
 	else
 		world.name = station_name
 
 	return station_name
-
-/proc/world_name(var/name)
-
-	station_name = name
-
-	if (config && config.server_name)
-		world.name = "[config.server_name]: [name]"
-	else
-		world.name = name
-
-	return name
 
 var/syndicate_name = null
 /proc/syndicate_name()

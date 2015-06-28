@@ -28,7 +28,7 @@
 	//snap pop
 	playsound(src, 'sound/effects/snap.ogg', 50, 1)
 	src.visible_message("<span class='warning'>\The [src] explodes in a bright flash!</span>")
-	
+
 	new /obj/effect/decal/cleanable/ash(src.loc) //always use src.loc so that ash doesn't end up inside windows
 	new /obj/effect/effect/sparks(T)
 	new /obj/effect/effect/smoke/illumination(T, brightness=max(flash_range*2, brightness), lifetime=light_duration)
@@ -44,14 +44,10 @@
 	name = "electrode"
 	icon_state = "spark"
 	nodamage = 1
-	/*
 	stun = 10
 	weaken = 10
 	stutter = 10
-	*/
 	taser_effect = 1
-	agony = 40
-	damage_type = HALLOSS
 	//Damage will be handled on the MOB side, to prevent window shattering.
 
 /obj/item/projectile/energy/electrode/stunshot
@@ -81,7 +77,6 @@
 	icon_state = "cbbolt"
 	damage = 10
 	damage_type = TOX
-	nodamage = 0
 	agony = 40
 	stutter = 10
 
@@ -90,6 +85,23 @@
 	name = "largebolt"
 	damage = 20
 
+/obj/item/projectile/energy/plasma
+	name = "plasma"
+	icon_state = "declone"
+	damage = 10
+
+/obj/item/projectile/energy/plasma/pistol
+	damage = 5
+
+/obj/item/projectile/energy/plasma/light
+	damage = 10
+
+/obj/item/projectile/energy/plasma/rifle
+	damage = 20
+
+/obj/item/projectile/energy/plasma/MP40k
+	damage = 35
+	eyeblur = 4
 
 /obj/item/projectile/energy/neurotoxin
 	name = "neuro"
@@ -104,3 +116,22 @@
 	damage = 20
 	damage_type = TOX
 	irradiate = 20
+
+/obj/item/projectile/energy/rad
+	name = "rad"
+	icon_state = "rad"
+	damage = 30
+	damage_type = BURN
+	nodamage = 0
+	weaken = 10
+	stutter = 10
+
+	on_hit(var/atom/hit)
+		if(ishuman(hit))
+
+			var/mob/living/carbon/human/H = hit
+
+			scramble(1, H, 100) // Scramble all UIs
+			scramble(null, H, 5) // Scramble SEs, 5% chance for each block
+
+			H.apply_effect((rand(50, 250)),IRRADIATE)
