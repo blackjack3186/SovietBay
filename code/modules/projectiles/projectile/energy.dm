@@ -47,7 +47,6 @@
 	stun = 10
 	weaken = 10
 	stutter = 10
-	taser_effect = 1
 	//Damage will be handled on the MOB side, to prevent window shattering.
 
 /obj/item/projectile/energy/electrode/stunshot

@@ -186,6 +186,7 @@ var/list/beam_master = list()
 	icon_state = "stun"
 	nodamage = 0
 	damage_type = BURN
+	taser_effect = 0
 	damage = 10
 	stun = 10
 	weaken = 10
