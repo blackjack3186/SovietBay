@@ -899,7 +899,7 @@
 "ro" = (/obj/machinery/clonepod,/turf/simulated/shuttle/floor{icon_state = "floor3"},/area/shuttle/administration/centcom)
 "rp" = (/obj/machinery/computer/scan_consolenew,/turf/simulated/shuttle/floor{icon_state = "floor3"},/area/shuttle/administration/centcom)
 "rq" = (/obj/machinery/computer/shuttle_control{req_access = null; req_access_txt = "101"; shuttle_tag = "Administration"},/turf/simulated/shuttle/floor{icon_state = "floor4"},/area/shuttle/administration/centcom)
-"rr" = (/obj/structure/device/piano{dir = 4},/turf/unsimulated/floor{icon_state = "redyellowfull"},/area/centcom/living)
+"rr" = (/obj/structure/piano{dir = 4},/turf/unsimulated/floor{icon_state = "redyellowfull"},/area/centcom/living)
 "rs" = (/obj/item/weapon/stool{pixel_y = 8},/turf/unsimulated/floor{icon_state = "redyellowfull"},/area/centcom/living)
 "rt" = (/obj/structure/closet/secure_closet/bar{req_access_txt = "25"},/turf/unsimulated/floor{icon_state = "cafeteria"; dir = 2},/area/centcom/living)
 "ru" = (/obj/structure/reagent_dispensers/beerkeg,/turf/unsimulated/floor{icon_state = "cafeteria"; dir = 2},/area/centcom/living)
