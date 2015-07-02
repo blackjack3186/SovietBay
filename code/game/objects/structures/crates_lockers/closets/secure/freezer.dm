@@ -71,6 +71,34 @@
 
 
 
+/obj/structure/closet/secure_closet/freezer/blood
+	name = "Blood storage"
+	icon_state = "fridge1"
+	icon_closed = "fridge"
+	icon_locked = "fridge1"
+	icon_opened = "fridgeopen"
+	icon_broken = "fridgebroken"
+	icon_off = "fridge1"
+
+
+	New()
+		..()
+		for(var/i = 0, i < 5, i++)
+			new /obj/item/weapon/reagent_containers/blood/OMinus(src)
+		for(var/i = 0, i < 5, i++)
+			new /obj/item/weapon/reagent_containers/blood/OPlus(src)
+		for(var/i = 0, i < 5, i++)
+			new /obj/item/weapon/reagent_containers/blood/BMinus(src)
+		for(var/i = 0, i < 5, i++)
+			new /obj/item/weapon/reagent_containers/blood/BPlus(src)
+		for(var/i = 0, i < 5, i++)
+			new /obj/item/weapon/reagent_containers/blood/AMinus(src)
+		for(var/i = 0, i < 5, i++)
+			new /obj/item/weapon/reagent_containers/blood/APlus(src)
+		return
+
+
+
 /obj/structure/closet/secure_closet/freezer/money
 	name = "freezer"
 	icon_state = "fridge1"
