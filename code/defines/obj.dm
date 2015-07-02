@@ -256,7 +256,7 @@ var/global/ManifestJSON
 /obj/effect/laser
 	name = "laser"
 	desc = "IT BURNS!!!"
-	icon = 'icons/obj/projectiles.dmi'
+	icon = 'icons/obj/guns/projectiles.dmi'
 	var/damage = 0.0
 	var/range = 10.0
 

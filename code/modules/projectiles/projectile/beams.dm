@@ -178,16 +178,14 @@ var/list/beam_master = list()
 	name = "stun beam"
 	icon_state = "bluelaser"
 	nodamage = 1
-	taser_effect = 1
-	agony = 40
-	damage_type = HALLOSS
+	stun = 10
+	weaken = 10
+	stutter = 10
 
 /obj/item/projectile/beam/stun/electrode
 	icon_state = "stun"
 	nodamage = 0
-	damage_type = BURN
-	taser_effect = 0
 	damage = 10
-	stun = 10
-	weaken = 10
-	stutter = 10
+	taser_effect = 1
+	agony = 100
+	damage_type = HALLOSS

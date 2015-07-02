@@ -1,6 +1,8 @@
 /obj/item/weapon/gun/launcher
 	name = "launcher"
 	desc = "A device that launches things."
+	icon = 'icons/obj/guns/launcher.dmi'
+	icon_state = "crossbow"
 	w_class = 5.0
 	flags =  CONDUCT
 	slot_flags = SLOT_BACK

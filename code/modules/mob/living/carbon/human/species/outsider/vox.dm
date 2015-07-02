@@ -7,12 +7,11 @@
 	language = "Galactic Common"
 	unarmed_types = list(/datum/unarmed_attack/stomp, /datum/unarmed_attack/kick,  /datum/unarmed_attack/claws/strong, /datum/unarmed_attack/bite/strong)
 	rarity_value = 2
-	blurb = "The Vox are the broken remnants of a once-proud race, now reduced to little more than \
-	scavenging vermin who prey on isolated stations, ships or planets to keep their own ancient arkships \
-	alive. They are four to five feet tall, reptillian, beaked, tailed and quilled; human crews often \
-	refer to them as 'shitbirds' for their violent and offensive nature, as well as their horrible \
-	smell.<br/><br/>Most humans will never meet a Vox raider, instead learning of this insular species through \
-	dealing with their traders and merchants; those that do rarely enjoy the experience."
+	blurb = "Воксы. Птицеподобная раса пиратов и торговцев. Не имеют родной планеты и проживают в основном на станциях или астероидах. \
+	Государства так такового не имеют, но воксы разделены на множество пиратских кланов. Самые влиятельные кланы создали протогосударство Ньохирра, \
+	что означает \"Совет Великих\". Именно на станциях воксов располагаются чёрные рынки, разношёрстные повстанцы, культисты Нар-Си и отряды Синдиката. \
+	На станциях НТ могут занимать любую должность кроме глав. Воксы-налётчики не всегда прорываются с боем за добычей на станции других рас, \
+	иногда они просто торгуются. Так же имеют некоторые проблемы с дикцией и стараются не кричать."
 
 	speech_sounds = list('sound/voice/shriek1.ogg')
 	speech_chance = 20

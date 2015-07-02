@@ -1,7 +1,7 @@
 /obj/item/weapon/gun/launcher/rocket
 	name = "rocket launcher"
 	desc = "MAGGOT."
-	icon_state = "rocket"
+	icon_state = "rpg"
 	item_state = "rocket"
 	w_class = 4.0
 	throw_speed = 2
@@ -11,11 +11,18 @@
 	slot_flags = 0
 	origin_tech = "combat=8;materials=5"
 	fire_sound = 'sound/effects/bang.ogg'
-	
+
 	release_force = 15
 	throw_distance = 30
 	var/max_rockets = 1
 	var/list/rockets = new/list()
+
+/obj/item/weapon/gun/launcher/rocket/update_icon()
+	if(rockets.len)
+		icon_state = "rpg_r"
+	else
+		icon_state = "rpg"
+
 
 /obj/item/weapon/gun/launcher/rocket/examine(mob/user)
 	if(!..(user, 2))
@@ -30,6 +37,7 @@
 			rockets += I
 			user << "\blue You put the rocket in [src]."
 			user << "\blue [rockets.len] / [max_rockets] rockets."
+			update_icon()
 		else
 			usr << "\red [src] cannot hold more rockets."
 
@@ -40,6 +48,7 @@
 		M.primed = 1
 		rockets -= I
 		return M
+	update_icon()
 	return null
 
 /obj/item/weapon/gun/launcher/rocket/handle_post_fire(mob/user, atom/target)

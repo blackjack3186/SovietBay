@@ -1,6 +1,7 @@
 /obj/item/weapon/gun/energy/pulse_rifle
 	name = "pulse rifle"
 	desc = "A weapon that uses advanced pulse-based beam generation technology to emit powerful laser blasts. Because of its complexity and cost, it is rarely seen in use except by specialists."
+	icon = 'icons/obj/guns/laser.dmi'
 	icon_state = "pulse"
 	item_state = null	//so the human update icon uses the icon_state instead.
 	slot_flags = SLOT_BELT|SLOT_BACK
@@ -46,8 +47,6 @@
 /obj/item/weapon/gun/energy/pulse_rifle/destroyer/attack_self(mob/living/user as mob)
 	user << "<span class='warning'>[src.name] has three settings, and they are all DESTROY.</span>"
 
-
-//WHY?
 /obj/item/weapon/gun/energy/pulse_rifle/M1911
 	name = "\improper M1911-P"
 	desc = "It's not the size of the gun, it's the size of the hole it puts through people."

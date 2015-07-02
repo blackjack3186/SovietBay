@@ -1,6 +1,7 @@
 /obj/item/weapon/gun/energy/laser
 	name = "laser carbine"
 	desc = "A common laser weapon, designed to kill with concentrated energy blasts."
+	icon = 'icons/obj/guns/laser.dmi'
 	icon_state = "laser"
 	item_state = "laser"
 	fire_sound = 'sound/weapons/Laser.ogg'
@@ -42,6 +43,7 @@
 	icon_state = "adminlaser"
 	projectile_type = /obj/item/projectile/beam
 	charge_cost = 0
+	charge_meter = 0
 
 	update_icon()
 		return
@@ -62,6 +64,7 @@ obj/item/weapon/gun/energy/laser/retrolaser
 
 /obj/item/weapon/gun/energy/captain
 	name = "antique laser gun"
+	icon = 'icons/obj/guns/laser.dmi'
 	icon_state = "caplaser"
 	item_state = "caplaser"
 	desc = "This is an antique laser gun. All craftsmanship is of the highest quality. It is decorated with assistant leather and chrome. The object menaces with spikes of energy. On the item is an image of Space Station 13. The station is exploding."
@@ -77,6 +80,7 @@ obj/item/weapon/gun/energy/laser/retrolaser
 /obj/item/weapon/gun/energy/lasercannon
 	name = "laser cannon"
 	desc = "With the laser cannon, the lasing medium is enclosed in a tube lined with uranium-235 and subjected to high neutron flux in a nuclear reactor core. This incredible technology may help YOU achieve high excitation rates with small laser volumes!"
+	icon = 'icons/obj/guns/laser.dmi'
 	icon_state = "lasercannon"
 	fire_sound = 'sound/weapons/lasercannonfire.ogg'
 	origin_tech = "combat=4;materials=3;powerstorage=3"
@@ -94,6 +98,7 @@ obj/item/weapon/gun/energy/laser/retrolaser
 /obj/item/weapon/gun/energy/xray
 	name = "xray laser gun"
 	desc = "A high-power laser gun capable of expelling concentrated xray blasts."
+	icon = 'icons/obj/guns/laser.dmi'
 	icon_state = "xray"
 	item_state = "xray"
 	fire_sound = 'sound/weapons/laser3.ogg'
@@ -105,6 +110,7 @@ obj/item/weapon/gun/energy/laser/retrolaser
 /obj/item/weapon/gun/energy/sniperrifle
 	name = "\improper L.W.A.P. sniper rifle"
 	desc = "A high-power laser rifle fitted with a SMART aiming-system scope."
+	icon = 'icons/obj/guns/laser.dmi'
 	icon_state = "sniper"
 	item_state = "laser"
 	fire_sound = 'sound/weapons/marauder.ogg'
@@ -128,7 +134,8 @@ obj/item/weapon/gun/energy/laser/retrolaser
 /obj/item/weapon/gun/energy/plasma
 	name = "plasma gun"
 	desc = "A high-power plasma gun. You shouldn't ever see this."
-	icon_state = "xray"
+	icon = 'icons/obj/guns/toxgun.dmi'
+	icon_state = "toxgun"
 	fire_sound = 'sound/weapons/elecfire.ogg'
 	origin_tech = "combat=5;materials=3;magnets=2"
 	projectile_type = /obj/item/projectile/energy/plasma
@@ -166,6 +173,8 @@ obj/item/weapon/gun/energy/laser/retrolaser
 
 /obj/item/weapon/gun/energy/lasertag
 	name = "laser tag gun"
+	icon = 'icons/obj/guns/laser.dmi'
+	icon_state = "bluetag"
 	item_state = "laser"
 	desc = "Standard issue weapon of the Imperial Guard"
 	origin_tech = "combat=1;magnets=2"

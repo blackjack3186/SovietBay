@@ -24,6 +24,19 @@
 	origin_tech = "combat=2;materials=2"
 	ammo_type = /obj/item/ammo_casing/c38
 
+	gold
+		name = "gold revolver"
+		icon_state = "detective_gold"
+	leopard
+		name = "Leopard"
+		icon_state = "detective_leopard"
+	panther
+		name = "Panther"
+		icon_state = "detective_panther"
+	peacemaker
+		name = "Peacemaker"
+		icon_state = "detective_peacemaker"
+
 /obj/item/weapon/gun/projectile/revolver/detective/verb/rename_gun()
 	set name = "Name Gun"
 	set category = "Object"
@@ -41,3 +54,86 @@
 		name = input
 		M << "You name the gun [input]. Say hello to your new friend."
 		return 1
+
+/obj/item/weapon/gun/projectile/revolver/russian
+	name = "Russian Revolver"
+	desc = "A Russian made revolver. Uses .357 ammo. It has a single slot in it's chamber for a bullet."
+	max_shells = 6
+	origin_tech = "combat=2;materials=2"
+
+/obj/item/weapon/gun/projectile/revolver/russian/New()
+	Spin()
+	update_icon()
+
+/obj/item/weapon/gun/projectile/revolver/russian/proc/Spin()
+
+	for(var/obj/item/ammo_casing/AC in loaded)
+		del(AC)
+	loaded = list()
+	var/random = rand(1, max_shells)
+	for(var/i = 1; i <= max_shells; i++)
+		if(i != random)
+			loaded += i // Basically null
+		else
+			loaded += new ammo_type(src)
+
+
+/obj/item/weapon/gun/projectile/revolver/russian/attackby(var/obj/item/A as obj, mob/user as mob)
+
+	if(!A) return
+
+	var/num_loaded = 0
+	if(istype(A, /obj/item/ammo_magazine))
+
+		if((load_method == 2) && getAmmo())	return
+		var/obj/item/ammo_magazine/AM = A
+		for(var/obj/item/ammo_casing/AC in AM.stored_ammo)
+			if(getAmmo() > 0 || getAmmo() >= max_shells)
+				break
+			if(caliber[AC.caliber] && getAmmo() < max_shells)
+				AC.loc = src
+				AM.stored_ammo -= AC
+				loaded += AC
+				num_loaded++
+			break
+		A.update_icon()
+
+	if(num_loaded)
+		user.visible_message("<span class='warning'>[user] loads a single bullet into the revolver and spins the chamber.</span>", "<span class='warning'>You load a single bullet into the chamber and spin it.</span>")
+	else
+		user.visible_message("<span class='warning'>[user] spins the chamber of the revolver.</span>", "<span class='warning'>You spin the revolver's chamber.</span>")
+	if(getAmmo() > 0)
+		Spin()
+	update_icon()
+	return
+
+/obj/item/weapon/gun/projectile/revolver/russian/attack_self(mob/user as mob)
+
+	user.visible_message("<span class='warning'>[user] spins the chamber of the revolver.</span>", "<span class='warning'>You spin the revolver's chamber.</span>")
+	if(getAmmo() > 0)
+		Spin()
+
+/obj/item/weapon/gun/projectile/revolver/russian/attack(atom/target as mob|obj|turf|area, mob/living/user as mob|obj)
+
+	if(!getAmmo())
+		user.visible_message("\red *click*", "\red *click*")
+		playsound(user, 'sound/weapons/empty.ogg', 100, 1)
+		return
+
+	if(isliving(target) && isliving(user))
+		if(target == user)
+			var/datum/organ/external/affecting = user.zone_sel.selecting
+			if(affecting == "head")
+
+				var/obj/item/ammo_casing/AC = loaded[1]
+				if(!process_chambered())
+					user.visible_message("\red *click*", "\red *click*")
+					playsound(user, 'sound/weapons/empty.ogg', 100, 1)
+					return
+				var/obj/item/projectile/P = new AC.projectile_type
+				playsound(user, fire_sound, 50, 1)
+				user.visible_message("<span class='danger'>[user.name] fires [src] at \his head!</span>", "<span class='danger'>You fire [src] at your head!</span>", "You hear a [istype(P, /obj/item/projectile/beam) ? "laser blast" : "gunshot"]!")
+				if(!P.nodamage)
+					user.apply_damage(300, BRUTE, affecting) // You are dead, dead, dead.
+				return
+	..()

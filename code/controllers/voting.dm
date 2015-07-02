@@ -228,10 +228,10 @@ datum/controller/vote
 						question = "End the shift?"
 						choices.Add("Initiate Crew Transfer", "Continue The Round")
 				if("custom")
-					question = html_encode(input(usr,"What is the vote for?") as text|null)
+					question = input(usr,"What is the vote for?") as text|null
 					if(!question)	return 0
 					for(var/i=1,i<=10,i++)
-						var/option = capitalize(html_encode(input(usr,"Please enter an option or hit cancel to finish") as text|null))
+						var/option = capitalize(input(usr,"Please enter an option or hit cancel to finish") as text|null)
 						if(!option || mode || !usr.client)	break
 						choices.Add(option)
 				else			return 0
@@ -243,7 +243,7 @@ datum/controller/vote
 				text += "\n[question]"
 
 			log_vote(text)
-			world << "<font color='purple'><b>[text]</b>\nType vote to place your votes.\nYou have [config.vote_period/10] seconds to vote.</font>"
+			world << "<font color='purple'><b>[sanitize(text)]</b>\nType vote to place your votes.\nYou have [config.vote_period/10] seconds to vote.</font>"
 			switch(vote_type)
 				if("crew_transfer")
 					world << sound('sound/ambience/alarm4.ogg', repeat = 0, wait = 0, volume = 50, channel = 3)
@@ -327,7 +327,7 @@ datum/controller/vote
 				. += "<li><a href='?src=\ref[src];vote=custom'>Custom</a></li>"
 			. += "</ul><hr>"
 		. += "<a href='?src=\ref[src];vote=close' style='position:absolute;right:50px'>Close</a></body></html>"
-		return .
+		return russian_browser(.)
 
 
 	Topic(href,href_list[],hsrc)

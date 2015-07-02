@@ -1,3 +1,7 @@
+/obj/item/weapon/gun/projectile/shotgun
+	icon = 'icons/obj/guns/shotgun.dmi'
+	icon_state = "shotgun"
+
 /obj/item/weapon/gun/projectile/shotgun/pump
 	name = "shotgun"
 	desc = "Useful for sweeping alleys."

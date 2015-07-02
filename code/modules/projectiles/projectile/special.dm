@@ -190,7 +190,7 @@ obj/item/projectile/kinetic/New()
 
 /obj/item/effect/kinetic_blast
 	name = "kinetic explosion"
-	icon = 'icons/obj/projectiles.dmi'
+	icon = 'icons/obj/guns/projectiles.dmi'
 	icon_state = "kinetic_blast"
 	layer = 4.1
 

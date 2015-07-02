@@ -479,7 +479,7 @@
 					config.popup_admin_pm = 1
 
 				if("allow_holidays")
-					Holiday = 1
+					Holiday = 0 //zero for station name stuff
 
 				if("use_irc_bot")
 					use_irc_bot = 1

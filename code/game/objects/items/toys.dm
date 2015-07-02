@@ -140,7 +140,7 @@
 /obj/item/toy/gun
 	name = "cap gun"
 	desc = "There are 0 caps left. Looks almost like the real thing! Ages 8 and up. Please recycle in an autolathe when you're out of caps!"
-	icon = 'icons/obj/gun.dmi'
+	icon = 'icons/obj/guns/pistol.dmi'
 	icon_state = "revolver"
 	item_state = "gun"
 	flags =  CONDUCT

@@ -8,6 +8,12 @@
 	projectile_type = /obj/item/projectile/energy/electrode
 	cell_type = /obj/item/weapon/cell/crap
 
+	taserbay
+		icon_state = "taserbay"
+
+	taservg
+		icon_state = "taservg"
+
 /obj/item/weapon/gun/energy/taser/advanced
 	name = " advanced taser gun"
 	desc = "Beam tasering device."
@@ -32,6 +38,7 @@
 /obj/item/weapon/gun/energy/stunrevolver
 	name = "stun revolver"
 	desc = "A high-tech revolver that fires stun cartridges. The stun cartridges can be recharged using a conventional energy weapon recharger."
+	icon = 'icons/obj/guns/pistol.dmi'
 	icon_state = "stunrevolver"
 	item_state = "stunrevolver"
 	fire_sound = 'sound/weapons/Gunshot.ogg'
@@ -44,6 +51,7 @@
 /obj/item/weapon/gun/energy/crossbow
 	name = "mini energy-crossbow"
 	desc = "A weapon favored by many mercenary stealth specialists."
+	icon = 'icons/obj/guns/launcher.dmi'
 	icon_state = "crossbow"
 	w_class = 2.0
 	item_state = "crossbow"

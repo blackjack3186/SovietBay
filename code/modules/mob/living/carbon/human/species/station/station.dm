@@ -4,11 +4,10 @@
 	language = "Sol Common"
 	primitive = /mob/living/carbon/monkey
 	unarmed_types = list(/datum/unarmed_attack/stomp, /datum/unarmed_attack/kick, /datum/unarmed_attack/punch, /datum/unarmed_attack/bite)
-	blurb = "Humanity originated in the Sol system, and over the last five centuries has spread \
-	colonies across a wide swathe of space. They hold a wide range of forms and creeds.<br/><br/> \
-	While the central Sol government maintains control of its far-flung people, powerful corporate \
-	interests, rampant cyber and bio-augmentation and secretive factions make life on most human \
-	worlds tumultous at best."
+	blurb = "Человечество. Самая многочисленная и самая сильная раса во всём Млечном Пути. \
+	Родная планета - Земля. У других рас название другое - Терра. \
+	Всё человечество сплочено под знаменем Конфедерации, которая выступает как жандарм во всей Галактике, что не нравится унатхам. \
+	Человечество ведёт активную экспансию в новых мирах и постоянно ввязывается в войны то с кланами воксов, то с мятежными унатхами."
 
 	flags = CAN_JOIN | HAS_SKIN_TONE | HAS_LIPS | HAS_UNDERWEAR | HAS_EYE_COLOR
 
@@ -24,11 +23,14 @@
 	darksight = 3
 	gluttonous = 1
 
-	blurb = "A heavily reptillian species, Unathi (or 'Sinta as they call themselves) hail from the \
-	Uuosa-Eso system, which roughly translates to 'burning mother'.<br/><br/>Coming from a harsh, radioactive \
-	desert planet, they mostly hold ideals of honesty, virtue, martial combat and bravery above all \
-	else, frequently even their own lives. They prefer warmer temperatures than most species and \
-	their native tongue is a heavy hissing laungage called Sinta'Unathi."
+	blurb = "Унатхи. Ящероподобная раса воинов, ставящее превыше всего честь предков и воинскую храбрость. Родная планета - Унатхнатх. \
+	Несмотря на огромную милитаризацию общества, унатхские врачи пользуются огромным спросом среди конфедератов. \
+	Имеют множество колоний в отдалённых секторах, которые, впрочем, объявили независимость от Империи Сла'Азаров. \
+	Унатхское общество консервативно во многих сферах. Большинство унатхи прикреплены к какому-либо аристократическому роду, \
+	хотя простой унатхи может легко сменить подданство.	Множество молодых унатхов, прознавшее о военной мощи Конфедерации, \
+	нанимается к конфедератам как пилоты истребителей или штурмовой пехотой. С презрением относятся к скреллам и таяранам, но уважают воксов. \
+	На станциях НТ представлены в основном как сотрудники Службы Безопасности и медицинский персонал. \
+	Имена похожи на африканские и произносятся на одном дыхании."
 
 	cold_level_1 = 280 //Default 260 - Lower is better
 	cold_level_2 = 220 //Default 200
@@ -71,11 +73,13 @@
 	slowdown = -1
 	brute_mod = 1.2
 
-	blurb = "The Tajaran race is a species of feline-like bipeds hailing from the planet of Ahdomai in the \
-	S'randarr system. They have been brought up into the space age by the Humans and Skrell, and have been \
-	influenced heavily by their long history of Slavemaster rule. They have a structured, clan-influenced way \
-	of family and politics. They prefer colder environments, and speak a variety of languages, mostly Siik'Maas, \
-	using unique inflections their mouths form."
+	blurb = "Таяране. Дружелюбная котоподобная раса. Родная планета - С'Джар. \
+	Основное государство таяран - Государство Салейманов, активно поддерживаемое Конфедерацией и Халифом в частности. \
+	Общество таяран отсталое, присутствуют феодальные отношения и хорошо развитое рабовладение. \
+	Большинство таяран находится за чертой бедности, поэтому нет ничего удивительного, \
+	если вы увидите красивую таяранку на невольничьем рынке или таяранина, работающего за гроши на заводах людей. \
+	На станциях НТ работают в основном на гражданских должностях, в то время как дворяне из числа таяран иногда встречаются в руководстве станций. \
+	Имена похожи на арабские."
 
 	cold_level_1 = 200 //Default 260
 	cold_level_2 = 140 //Default 200
@@ -109,11 +113,13 @@
 	language = "Skrellian"
 	primitive = /mob/living/carbon/monkey/skrell
 	unarmed_types = list(/datum/unarmed_attack/punch)
-	blurb = "An amphibious species, Skrell come from the star system known as Qerr'Vallis, which translates to 'Star of \
-	the royals' or 'Light of the Crown'.<br/><br/>Skrell are a highly advanced and logical race who live under the rule \
-	of the Qerr'Katish, a caste within their society which keeps the empire of the Skrell running smoothly. Skrell are \
-	herbivores on the whole and tend to be co-operative with the other species of the galaxy, although they rarely reveal \
-	the secrets of their empire to their allies."
+	blurb = "Скреллы. Поднаторевшая в науке раса амфибий. Родная планета - Скреллариум. \
+	Практически все скреллы объединены под знамёнами королевства Скреллион, являющееся королевством только формально. \
+	По факту, всю полноту власти имеет парламент. По распространённому среди людей стереотипу, у скреллов процветает матриархат, хотя это в корне неверно, \
+	поскольку на территории Скреллиона действует полное равноправие и дискриминация по гендерному признаку для обоих полов карается огромным штрафом. \
+	Скреллские учёные редко идут на работу на конфедеративных научных станциях, справедливо считая, \
+	что там разработки зависят от количества денег у заказчика, но врачи и генетики из числа скреллов активно идут работать на станциях НТ. \
+	На станции представлены в основном медперсоналом, хотя бывают и исключения."
 
 	flags = CAN_JOIN | IS_WHITELISTED | HAS_LIPS | HAS_UNDERWEAR | HAS_SKIN_COLOR
 
@@ -136,13 +142,11 @@
 	hud_type = /datum/hud_data/diona
 	siemens_coefficient = 0.3
 
-	blurb = "Commonly referred to (erroneously) as 'plant people', the Dionaea are a strange space-dwelling collective \
-	species hailing from Epsilon Ursae Minoris. Each 'diona' is a cluster of numerous cat-sized organisms called nymphs; \
-	there is no effective upper limit to the number that can fuse in gestalt, and reports exist	of the Epsilon Ursae \
-	Minoris primary being ringed with a cloud of singing space-station-sized entities.<br/><br/>The Dionaea coexist peacefully with \
-	all known species, especially the Skrell. Their communal mind makes them slow to react, and they have difficulty understanding \
-	even the simplest concepts of other minds. Their alien physiology allows them survive happily off a diet of nothing but light, \
-	water and other radiation."
+	blurb = "Дионеи. Раса разумных бесполых растений. Рождены буквально в космической пустоте, где образуют огромные колонии, \
+	размерами сопоставимые со звёздами. Дионеи - настоящие автотрофы, способные к синтезу не только питательных веществ, \
+	но и многих других органических соединений. Имеют два этапа жизненного цикла: \"Нимфы\", когда диона только появилась и начинает познавать мир, \
+	и взрослая особь - \"Энт\". Своего государства не имеют и в нём не заинтересованы, хотя их колонии Конфедерация называет Консорциумами. \
+	Дионеи крайне миролюбивая раса, поэтому даже если они работают на станциях, то не на должностях СБ."
 
 	has_organ = list(
 		"nutrient channel" =   /datum/organ/internal/diona/nutrients,

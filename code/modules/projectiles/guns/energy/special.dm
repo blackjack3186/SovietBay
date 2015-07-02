@@ -1,6 +1,7 @@
 /obj/item/weapon/gun/energy/ionrifle
 	name = "ion rifle"
 	desc = "A man portable anti-armor weapon designed to disable mechanical threats"
+	icon = 'icons/obj/guns/special.dmi'
 	icon_state = "ionrifle"
 	item_state = "ionrifle"
 	fire_sound = 'sound/weapons/ion.ogg'
@@ -25,6 +26,7 @@
 /obj/item/weapon/gun/energy/decloner
 	name = "biological demolecularisor"
 	desc = "A gun that discharges high amounts of controlled radiation to slowly break a target into component elements."
+	icon = 'icons/obj/guns/special.dmi'
 	icon_state = "decloner"
 	item_state = "decloner"
 	fire_sound = 'sound/weapons/pulse3.ogg'
@@ -35,6 +37,7 @@
 /obj/item/weapon/gun/energy/floragun
 	name = "floral somatoray"
 	desc = "A tool that discharges controlled radiation which induces mutation in plant cells."
+	icon = 'icons/obj/guns/special.dmi'
 	icon_state = "floramut100"
 	item_state = "floramut"
 	fire_sound = 'sound/effects/stealthoff.ogg'
@@ -73,6 +76,7 @@
 /obj/item/weapon/gun/energy/meteorgun
 	name = "meteor gun"
 	desc = "For the love of god, make sure you're aiming this the right way!"
+	icon = 'icons/obj/guns/launcher.dmi'
 	icon_state = "riotgun"
 	item_state = "c20r"
 	slot_flags = SLOT_BELT|SLOT_BACK
@@ -97,14 +101,15 @@
 /obj/item/weapon/gun/energy/mindflayer
 	name = "mind flayer"
 	desc = "A prototype weapon recovered from the ruins of Research-Station Epsilon."
-	icon = 'icons/obj/gun_alt.dmi'
-	icon_state = "xray"
+	icon = 'icons/obj/guns/laser.dmi'
+	icon_state = "mf"
 	projectile_type = /obj/item/projectile/beam/mindflayer
 	fire_sound = 'sound/weapons/Laser.ogg'
 
 /obj/item/weapon/gun/energy/toxgun
 	name = "phoron pistol"
 	desc = "A specialized firearm designed to fire lethal bolts of phoron."
+	icon = 'icons/obj/guns/toxgun.dmi'
 	icon_state = "toxgun"
 	fire_sound = 'sound/effects/stealthoff.ogg'
 	w_class = 3.0
@@ -116,7 +121,7 @@
 /obj/item/weapon/gun/energy/staff
 	name = "staff of change"
 	desc = "An artefact that spits bolts of coruscating energy which cause the target's very form to reshape itself"
-	icon = 'icons/obj/gun.dmi'
+	icon = 'icons/obj/guns/magic.dmi'
 	item_icons = null
 	icon_state = "staffofchange"
 	item_state = "staffofchange"
@@ -166,6 +171,7 @@ obj/item/weapon/gun/energy/staff/focus
 /obj/item/weapon/gun/energy/kinetic_accelerator
 	name = "proto-kinetic accelerator"
 	desc = "According to Nanotrasen accounting, this is mining equipment. It's been modified for extreme power output to crush rocks, but often serves as a miner's first defense against hostile alien life; it's not very powerful unless used in a low pressure environment."
+	icon = 'icons/obj/guns/special.dmi'
 	icon_state = "kineticgun"
 	item_state = "kineticgun"
 	projectile_type = /obj/item/projectile/kinetic
@@ -179,6 +185,7 @@ obj/item/weapon/gun/energy/staff/focus
 /obj/item/weapon/gun/energy/radgun
 	name = "radgun"
 	desc = "An experimental energy gun that fires radioactive projectiles that deal toxin damage, irradiate, and scramble DNA, giving the victim a different appearance and name, and potentially harmful or beneficial mutations. Recharges automatically."
+	icon = 'icons/obj/guns/special.dmi'
 	icon_state = "radgun"
 	fire_sound = 'sound/weapons/radgun.ogg'
 	charge_cost = 100

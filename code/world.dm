@@ -295,7 +295,7 @@ var/world_topic_spam_protect_time = world.timeofday
 	if (config && config.server_name)
 		s += "<b>[config.server_name]</b> &#8212; "
 
-	s += "<b>[station_name()]</b>(<a href=\"http://www.sovietstation.ru\"> Join Soviet Community!</a>)"
+	s += "<b>[station_name()]</b>(<a href=\"http://sovietstation.ru\"> Join Soviet Community!</a>)"
 
 	var/list/features = list()
 

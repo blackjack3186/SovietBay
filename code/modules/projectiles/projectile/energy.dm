@@ -35,6 +35,7 @@
 
 //blinds people like the flash round, but can also be used for temporary illumination
 /obj/item/projectile/energy/flash/flare
+	icon_state = "flareround"
 	damage = 10
 	flash_range = 1
 	brightness = 9 //similar to a flare
@@ -47,13 +48,12 @@
 	stun = 10
 	weaken = 10
 	stutter = 10
-	//Damage will be handled on the MOB side, to prevent window shattering.
 
 /obj/item/projectile/energy/electrode/stunshot
 	name = "stunshot"
+	icon_state = "bullet"
 	damage = 5
-	taser_effect = 1
-	agony = 80
+	nodamage = 0
 
 /obj/item/projectile/energy/declone
 	name = "declone"
@@ -118,6 +118,7 @@
 
 /obj/item/projectile/energy/rad
 	name = "rad"
+	icon = 'icons/obj/guns/special.dmi'
 	icon_state = "rad"
 	damage = 30
 	damage_type = BURN

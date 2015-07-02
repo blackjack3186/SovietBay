@@ -1,6 +1,7 @@
 /obj/item/weapon/gun/projectile/automatic //Hopefully someone will find a way to make these fire in bursts or something. --Superxpdude
 	name = "submachine gun"
 	desc = "A lightweight, fast firing gun. Uses 9mm rounds."
+	icon = 'icons/obj/guns/rifle.dmi'
 	icon_state = "saber"	//ugly
 	w_class = 3
 	load_method = SPEEDLOADER //yup. until someone sprites a magazine for it.
@@ -15,6 +16,7 @@
 /obj/item/weapon/gun/projectile/automatic/mini_uzi
 	name = "\improper Uzi"
 	desc = "A lightweight, fast firing gun, for when you want someone dead. Uses .45 rounds."
+	icon = 'icons/obj/guns/pistol.dmi'
 	icon_state = "mini-uzi"
 	w_class = 3
 	load_method = SPEEDLOADER //yup. until someone sprites a magazine for it.
@@ -103,7 +105,7 @@
 	magazine_type = /obj/item/ammo_magazine/a556
 	auto_eject = 1
 	auto_eject_sound = 'sound/weapons/smg_empty_alarm.ogg'
-	
+
 	var/use_launcher = 0
 	var/obj/item/weapon/gun/launcher/grenade/underslung/launcher
 
