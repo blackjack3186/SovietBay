@@ -180,3 +180,14 @@
 
 /obj/structure/bed/chair/office/dark
 	icon_state = "officechair_dark"
+
+/obj/structure/bed/chair/sofa
+	name = "old ratty sofa"
+	icon_state = "sofamiddle"
+	anchored = 1
+/obj/structure/bed/chair/sofa/left
+	icon_state = "sofaend_left"
+/obj/structure/bed/chair/sofa/right
+	icon_state = "sofaend_right"
+/obj/structure/bed/chair/sofa/corner
+	icon_state = "sofacorner"

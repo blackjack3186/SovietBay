@@ -45,6 +45,8 @@
 
 #define SOUND_MINIMUM_PRESSURE 10
 
+#define BASE_ZAS_FUEL_REQ	0.1
+
 // Pressure limits.
 #define  HAZARD_HIGH_PRESSURE 550 // This determines at what pressure the ultra-high pressure red icon is displayed. (This one is set as a constant)
 #define WARNING_HIGH_PRESSURE 325 // This determines when the orange pressure icon is displayed (it is 0.7 * HAZARD_HIGH_PRESSURE)
@@ -243,7 +245,7 @@
 #define slot_legs        21
 #define slot_tie         22
 
-// Mob sprite sheets. These need to be strings as numbers 
+// Mob sprite sheets. These need to be strings as numbers
 // cannot be used as associative list keys.
 #define icon_l_hand		"slot_l_hand"
 #define icon_r_hand		"slot_r_hand"

@@ -332,6 +332,18 @@
 		reagents.add_reagent("coco", 2)
 		bitesize = 2
 
+/obj/item/weapon/reagent_containers/food/snacks/reagentchocolatebar //for reagent chocolate
+	name = "Chocolate Bar"
+	desc = "A plain chocolate bar. Is it dark chocolate, milk chocolate? Who knows!"
+	icon_state = "chocolatebar"
+	filling_color = "#7D5F46"
+
+	New()
+		..()
+		reagents.add_reagent("sugar", 10)
+		reagents.add_reagent("chocolate",10)
+		bitesize = 2
+
 /obj/item/weapon/reagent_containers/food/snacks/chocolateegg
 	name = "Chocolate Egg"
 	desc = "Such sweet, fattening food."
@@ -1173,6 +1185,16 @@
 	New()
 		..()
 		reagents.add_reagent("nutriment", 6)
+
+/obj/item/weapon/reagent_containers/food/snacks/bustanuts
+	name = "Busta-Nuts"
+	icon_state = "busta_nut"
+	desc = "2hard4u"
+	trash = /obj/item/trash/bustanuts
+	New()
+		..()
+		reagents.add_reagent("nutriment", 6)
+		reagents.add_reagent("bustanut", 6)
 
 /obj/item/weapon/reagent_containers/food/snacks/spacetwinkie
 	name = "Space Twinkie"

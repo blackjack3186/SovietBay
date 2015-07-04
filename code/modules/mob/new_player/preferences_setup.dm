@@ -397,7 +397,7 @@ datum/preferences
 							clothes_s.Blend(new /icon('icons/mob/back.dmi', "satchel-norm"), ICON_OVERLAY)
 						if(4)
 							clothes_s.Blend(new /icon('icons/mob/back.dmi', "satchel"), ICON_OVERLAY)
-				if(CLOWN)
+/*				if(CLOWN)
 					clothes_s = new /icon('icons/mob/uniform.dmi', "clown_s")
 					clothes_s.Blend(new /icon('icons/mob/feet.dmi', "clown"), ICON_UNDERLAY)
 					clothes_s.Blend(new /icon('icons/mob/mask.dmi', "clown"), ICON_OVERLAY)
@@ -416,7 +416,7 @@ datum/preferences
 							clothes_s.Blend(new /icon('icons/mob/back.dmi', "satchel-norm"), ICON_OVERLAY)
 						if(4)
 							clothes_s.Blend(new /icon('icons/mob/back.dmi', "satchel"), ICON_OVERLAY)
-
+*/
 		else if(job_medsci_high)
 			switch(job_medsci_high)
 				if(RD)

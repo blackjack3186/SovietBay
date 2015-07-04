@@ -734,7 +734,29 @@
 
 		//Banning comes first
 		if(notbannedlist.len) //at least 1 unbanned job exists in joblist so we have stuff to ban.
-			switch(alert("Temporary Ban?",,"Yes","No", "Cancel"))
+			if(!check_rights(R_BAN))  return
+			var/reason = input(usr,"Reason?","Please State Reason","") as text|null
+			if(reason)
+				reason = sanitize(reason)
+				var/msg
+				for(var/job in notbannedlist)
+					ban_unban_log_save("[key_name(usr)] perma-jobbanned [key_name(M)] from [job]. reason: [reason]")
+					log_admin("[key_name(usr)] perma-banned [key_name(M)] from [job]")
+					feedback_inc("ban_job",1)
+					DB_ban_record(BANTYPE_JOB_PERMA, M, -1, reason, job)
+					feedback_add_details("ban_job","- [job]")
+					jobban_fullban(M, job, "[reason]; By [usr.ckey] on [time2text(world.realtime)]")
+					if(!msg)	msg = job
+					else		msg += ", [job]"
+				notes_add(M.ckey, "Banned  from [msg] - [reason]", usr)
+				message_admins("\blue [key_name_admin(usr)] banned [key_name_admin(M)] from [msg]", 1)
+				M << "\red<BIG><B>You have been jobbanned by [usr.client.ckey] from: [msg].</B></BIG>"
+				M << "\red <B>The reason is: [reason]</B>"
+				M << "\red Jobban can be lifted only upon request."
+				href_list["jobban2"] = 1 // lets it fall through and refresh
+				return 1
+		//no tempjobban, they should ask unjban on forum, not just wait for jobban ends.
+/*			switch(alert("Temporary Ban?",,"Yes","No", "Cancel"))
 				if("Yes")
 					if(!check_rights(R_MOD,0) && !check_rights(R_BAN))  return
 					if(config.ban_legacy_system)
@@ -790,7 +812,7 @@
 						return 1
 				if("Cancel")
 					return
-
+*/
 		//Unbanning joblist
 		//all jobs in joblist are banned already OR we didn't give a reason (implying they shouldn't be banned)
 		if(joblist.len) //at least 1 banned job exists in joblist so we have stuff to unban.

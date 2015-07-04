@@ -221,6 +221,29 @@
 		..()
 		reagents.add_reagent("hot_coco", 30)
 
+/obj/item/weapon/reagent_containers/food/drinks/chocolate
+	name = "Hot Chocolate"
+	desc = "Made in Space Switzerland."
+	icon_state = "hot_coco"
+	item_state = "coffee"
+	New()
+		..()
+		reagents.add_reagent("chocolate", 45)
+		src.pixel_x = rand(-10.0, 10)
+		src.pixel_y = rand(-10.0, 10)
+
+/obj/item/weapon/reagent_containers/food/drinks/weightloss
+	name = "Weight-Loss Shake"
+	desc = "A shake designed to cause weight loss.  The package proudly proclaims that it is 'tapeworm free.'"
+	icon_state = "coffee"
+	item_state = "coffee"
+	New()
+		..()
+		reagents.add_reagent("lipozine", 30)
+		reagents.add_reagent("chocolate", 5)
+		src.pixel_x = rand(-10.0, 10)
+		src.pixel_y = rand(-10.0, 10)
+
 /obj/item/weapon/reagent_containers/food/drinks/dry_ramen
 	name = "Cup Ramen"
 	desc = "Just add 10ml water, self heats! A taste that reminds you of your school years."
@@ -230,6 +253,15 @@
 		..()
 		reagents.add_reagent("dry_ramen", 30)
 
+/obj/item/weapon/reagent_containers/food/drinks/chicken_soup
+	name = "Cup Chicken Soup"
+	desc = "A delicious and soothing cup of chicken noodle soup; just like spessmom used to make it."
+	icon_state = "ramen"
+	New()
+		..()
+		reagents.add_reagent("chicken_soup", 30)
+		src.pixel_x = rand(-10.0, 10)
+		src.pixel_y = rand(-10.0, 10)
 
 /obj/item/weapon/reagent_containers/food/drinks/sillycup
 	name = "Paper Cup"
