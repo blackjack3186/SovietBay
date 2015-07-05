@@ -10,6 +10,20 @@ Attach to transfer valve and open. BOOM.
 
 */
 
+/atom
+	var/autoignition_temperature = 0 // In Kelvin.  0 = Not flammable
+	var/on_fire=0
+	var/fire_fuel=0 // Do NOT rely on this.  getFireFuel may be overridden.
+	var/fire_dmi = 'icons/effects/fire.dmi'
+	var/fire_sprite = "fire"
+	var/fire_overlay = null
+	var/ashtype = /obj/effect/decal/cleanable/ash
+
+	var/melt_temperature=0
+	var/molten = 0
+
+	var/volatility = BASE_ZAS_FUEL_REQ //the lower this is, the easier it burns with low fuel in it. Starts at the define value
+
 /turf/var/obj/fire/fire = null
 
 //Some legacy definitions so fires can be started.

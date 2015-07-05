@@ -7,6 +7,10 @@
 	w_class = 2.0
 	desc = "This is rubbish."
 
+/obj/item/trash/bustanuts
+	name = "Busta-Nuts"
+	icon_state = "busta_nut"
+
 /obj/item/trash/raisins
 	name = "\improper 4no raisins"
 	icon_state= "4no_raisins"

@@ -41,9 +41,8 @@ var/const/CARGOTECH			=(1<<7)
 var/const/MINER				=(1<<8)
 var/const/LAWYER			=(1<<9)
 var/const/CHAPLAIN			=(1<<10)
-var/const/CLOWN				=(1<<11)
-var/const/MIME				=(1<<12)
-var/const/ASSISTANT			=(1<<13)
+var/const/ARTIST			=(1<<11)
+var/const/ASSISTANT			=(1<<12)
 
 
 var/list/assistant_occupations = list(
@@ -98,6 +97,7 @@ var/list/civilian_positions = list(
 	"Shaft Miner",
 	"Lawyer",
 	"Chaplain",
+	"Artist",
 	"Assistant"
 )
 

@@ -173,7 +173,7 @@
 /obj/random/energy
 	name = "Random Energy Weapon"
 	desc = "This is a random security weapon."
-	icon = 'icons/obj/gun.dmi'
+	icon = 'icons/obj/guns/energy.dmi'
 	icon_state = "energykill100"
 	item_to_spawn()
 		return pick(prob(2);/obj/item/weapon/gun/energy/laser,\
@@ -183,7 +183,7 @@
 /obj/random/projectile
 	name = "Random Projectile Weapon"
 	desc = "This is a random security weapon."
-	icon = 'icons/obj/gun.dmi'
+	icon = 'icons/obj/guns/pistol.dmi'
 	icon_state = "revolver"
 	item_to_spawn()
 		return pick(prob(3);/obj/item/weapon/gun/projectile/shotgun/pump,\
@@ -193,7 +193,7 @@
 /obj/random/handgun
 	name = "Random Handgun"
 	desc = "This is a random security sidearm."
-	icon = 'icons/obj/gun.dmi'
+	icon = 'icons/obj/guns/pistol.dmi'
 	icon_state = "secgundark"
 	item_to_spawn()
 		return pick(prob(3);/obj/item/weapon/gun/projectile/sec,\

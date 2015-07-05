@@ -95,7 +95,21 @@ datum
 			on_update(var/atom/A)
 				return
 
-
+		muhhardcores
+			name = "Hardcores"
+			id = "bustanut"
+			description = "Concentrated hardcore beliefs."
+			reagent_state = LIQUID
+			color = "#FFF000"
+			custom_metabolism = 0.01
+			on_mob_life(var/mob/living/M)
+				if(prob(1))
+					if(prob(90))
+						M << "<span class='notice'>[pick("You feel quite hardcore","Coderbased is your god", "Fucking kickscammers Bustration will be the best")]."
+					else
+						M.say(pick("Muh hardcores.", "Falling down is a feature", "Gorrillionaires and Booty Borgs when?"))
+				..()
+				return
 
 		blood
 			data = new/list("donor"=null,"viruses"=null,"species"="Human","blood_DNA"=null,"blood_type"=null,"blood_colour"= "#A10808","resistances"=null,"trace_chem"=null, "antibodies" = list())
@@ -2369,6 +2383,24 @@ datum
 				..()
 				return
 
+		chocolate
+			name = "Chocolate"
+			id = "chocolate"
+			description = "Chocolate is a delightful product derived from the seeds of the theobroma cacao tree."
+			reagent_state = LIQUID
+			color = "#2E2418"
+
+			on_mob_life(var/mob/living/M as mob)
+				M.reagents.add_reagent("sugar", 0.8)
+				..()
+				return
+
+			reaction_turf(var/turf/T, var/volume)
+				src = null
+				if(volume >= 5)
+					new /obj/item/weapon/reagent_containers/food/snacks/reagentchocolatebar(T)
+					return
+
 		psilocybin
 			name = "Psilocybin"
 			id = "psilocybin"
@@ -2525,6 +2557,18 @@ datum
 			on_mob_life(var/mob/living/M as mob)
 				M.nutrition += nutriment_factor
 				M.bodytemperature += 10 * TEMPERATURE_DAMAGE_COEFFICIENT
+				..()
+				return
+
+		chicken_soup
+			name = "Chicken soup"
+			id = "chicken_soup"
+			description = "An old household remedy for mild illnesses."
+			reagent_state = LIQUID
+			color = "#B4B400"
+
+			on_mob_life(var/mob/living/M as mob)
+				M.nutrition += 2
 				..()
 				return
 
