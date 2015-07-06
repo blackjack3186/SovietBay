@@ -153,6 +153,10 @@
 	icon_state = "oxygen_fr"
 	distribute_pressure = ONE_ATMOSPHERE*O2STANDARD
 
+	voxtank
+		name = "Vox nitrogen tank"
+		slot_flags = SLOT_BELT | SLOT_BACK
+
 
 /obj/item/weapon/tank/nitrogen/New()
 	..()

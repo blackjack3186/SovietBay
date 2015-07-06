@@ -614,6 +614,11 @@
 		else
 			jobs += "<td width='20%'><a href='?src=\ref[src];jobban3=Emergency Response Team;jobban4=\ref[M]'>Emergency Response Team</a></td>"
 
+		//Alien
+		if(jobban_isbanned(M, "alien candidate") || isbanned_dept)
+			jobs += "<td width='20%'><a href='?src=\ref[src];jobban3=alien candidate;jobban4=\ref[M]'><font color=red>[replacetext("Alien", " ", "&nbsp")]</font></a></td>"
+		else
+			jobs += "<td width='20%'><a href='?src=\ref[src];jobban3=alien candidate;jobban4=\ref[M]'>[replacetext("Alien", " ", "&nbsp")]</a></td>"
 
 /*		//Malfunctioning AI	//Removed Malf-bans because they're a pain to impliment
 		if(jobban_isbanned(M, "malf AI") || isbanned_dept)
@@ -621,11 +626,6 @@
 		else
 			jobs += "<td width='20%'><a href='?src=\ref[src];jobban3=malf AI;jobban4=\ref[M]'>[replacetext("Malf AI", " ", "&nbsp")]</a></td>"
 
-		//Alien
-		if(jobban_isbanned(M, "alien candidate") || isbanned_dept)
-			jobs += "<td width='20%'><a href='?src=\ref[src];jobban3=alien candidate;jobban4=\ref[M]'><font color=red>[replacetext("Alien", " ", "&nbsp")]</font></a></td>"
-		else
-			jobs += "<td width='20%'><a href='?src=\ref[src];jobban3=alien candidate;jobban4=\ref[M]'>[replacetext("Alien", " ", "&nbsp")]</a></td>"
 
 		//Infested Monkey
 		if(jobban_isbanned(M, "infested monkey") || isbanned_dept)
@@ -2448,6 +2448,27 @@
 				feedback_add_details("admin_secrets_fun_used","OO")
 				usr.client.only_one()
 				message_admins("[key_name_admin(usr)] has triggered a battle to the death (only one)")
+			if("spawnselfdummy")
+				feedback_inc("admin_secrets_fun_used",1)
+				feedback_add_details("admin_secrets_fun_used","TD")
+				message_admins("[key_name_admin(usr)] spawned himself as a Test Dummy.")
+				var/turf/T = get_turf(usr)
+				var/mob/living/carbon/human/dummy/D = new /mob/living/carbon/human/dummy(T)
+				usr.client.cmd_assume_direct_control(D)
+				D.equip_to_slot_or_del(new /obj/item/clothing/under/color/black(D), slot_w_uniform)
+				D.equip_to_slot_or_del(new /obj/item/clothing/shoes/black(D), slot_shoes)
+				D.equip_to_slot_or_del(new /obj/item/weapon/card/id/admin(D), slot_wear_id)
+				D.equip_to_slot_or_del(new /obj/item/device/radio/headset/heads/captain(D), slot_l_ear)
+				D.equip_to_slot_or_del(new /obj/item/weapon/storage/backpack/satchel(D), slot_back)
+				D.equip_to_slot_or_del(new /obj/item/weapon/storage/box/engineer(D.back), slot_in_backpack)
+				D.name = "Admin"
+				D.real_name = "Admin"
+				var/newname = ""
+				newname = copytext(sanitize(input(D, "Before you step out as an embodied god, what name do you wish for?", "Choose your name.", "Admin") as null|text),1,MAX_NAME_LEN)
+				if (!newname)
+					newname = "Admin"
+				D.name = newname
+				D.real_name = newname
 		if(usr)
 			log_admin("[key_name(usr)] used secret [href_list["secretsfun"]]")
 			if (ok)

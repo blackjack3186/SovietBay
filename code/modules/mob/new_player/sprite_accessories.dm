@@ -46,12 +46,13 @@
 /datum/sprite_accessory/hair
 
 	icon = 'icons/mob/Human_face.dmi'	  // default icon for all hairs
+	species_allowed = list("Human","Clown","Mime")
 
 	bald
 		name = "Bald"
 		icon_state = "bald"
 		gender = MALE
-		species_allowed = list("Human","Unathi")
+		species_allowed = list("Human","Unathi","Clown","Mime")
 
 	short
 		name = "Short Hair"	  // try to capatilize the names please~
@@ -168,13 +169,13 @@
 		name = "Bobcurl"
 		icon_state = "hair_bobcurl"
 		gender = FEMALE
-		species_allowed = list("Human","Unathi")
+		species_allowed = list("Human","Unathi","Clown","Mime")
 
 	bob
 		name = "Bob"
 		icon_state = "hair_bobcut"
 		gender = FEMALE
-		species_allowed = list("Human","Unathi")
+		species_allowed = list("Human","Unathi","Clown","Mime")
 
 	bowl
 		name = "Bowl"
@@ -185,7 +186,7 @@
 		name = "Buzzcut"
 		icon_state = "hair_buzzcut"
 		gender = MALE
-		species_allowed = list("Human","Unathi")
+		species_allowed = list("Human","Unathi","Clown","Mime")
 
 	crew
 		name = "Crewcut"
@@ -270,7 +271,7 @@
 	mohawk
 		name = "Mohawk"
 		icon_state = "hair_d"
-		species_allowed = list("Human","Unathi")
+		species_allowed = list("Human","Unathi","Clown","Mime")
 	jensen
 		name = "Adam Jensen Hair"
 		icon_state = "hair_jensen"
@@ -289,7 +290,7 @@
 	spiky
 		name = "Spiky"
 		icon_state = "hair_spikey"
-		species_allowed = list("Human","Unathi")
+		species_allowed = list("Human","Unathi","Clown","Mime")
 	kusangi
 		name = "Kusanagi Hair"
 		icon_state = "hair_kusanagi"
@@ -494,7 +495,7 @@
 		name = "Shaved"
 		icon_state = "bald"
 		gender = NEUTER
-		species_allowed = list("Human","Unathi","Tajara","Skrell","Vox","Machine")
+		species_allowed = list("Human","Unathi","Tajara","Skrell","Vox","Machine","Clown","Mime")
 
 	watson
 		name = "Watson Mustache"
@@ -607,6 +608,34 @@
 		species_allowed = list("Skrell")
 		gender = FEMALE
 
+	skr_gold_m
+		name = "Gold plated Skrell Male Tentacles"
+		icon_state = "skrell_goldhair_m"
+		species_allowed = list("Skrell")
+		gender = MALE
+		//do_colouration = 0
+
+	skr_gold_f
+		name = "Gold chained Skrell Female Tentacles"
+		icon_state = "skrell_goldhair_f"
+		species_allowed = list("Skrell")
+		gender = FEMALE
+		//do_colouration = 0
+
+	skr_clothtentacle_m
+		name = "Cloth draped Skrell Male Tentacles"
+		icon_state = "skrell_clothhair_m"
+		species_allowed = list("Skrell")
+		gender = MALE
+	//	do_colouration = 0
+
+	skr_clothtentacle_f
+		name = "Cloth draped Skrell Female Tentacles"
+		icon_state = "skrell_clothhair_f"
+		species_allowed = list("Skrell")
+		gender = FEMALE
+	//	do_colouration = 0
+
 	taj_ears
 		name = "Tajaran Ears"
 		icon_state = "ears_plain"
@@ -671,6 +700,43 @@
 		name = "Short Vox Quills"
 		icon_state = "vox_shortquills"
 		species_allowed = list("Vox")
+		do_colouration = 0
+
+	vox_quills_kingly
+		name = "Kingly"
+		icon_state = "vox_kingly"
+		species_allowed = list("Vox")
+		do_colouration = 0
+
+	vox_quills_afro
+		name = "Afro"
+		icon_state = "vox_afro"
+		species_allowed = list("Vox")
+		do_colouration = 0
+
+	vox_quills_mohawk
+		name = "Mohawk"
+		icon_state = "vox_mohawk"
+		species_allowed = list("Vox")
+		do_colouration = 0
+
+	vox_quills_yasu
+		name = "Yasuhiro"
+		icon_state = "vox_yasu"
+		species_allowed = list("Vox")
+		do_colouration = 0
+
+	vox_quills_horns
+		name = "Quorns"
+		icon_state = "vox_horns"
+		species_allowed = list("Vox")
+		do_colouration = 0
+
+	vox_quills_nights
+		name = "Nights"
+		icon_state = "vox_nights"
+		species_allowed = list("Vox")
+		do_colouration = 0
 
 /datum/sprite_accessory/facial_hair
 
@@ -703,6 +769,30 @@
 		name = "Tajara Smallsatche"
 		icon_state = "facial_smallstache"
 		species_allowed = list("Tajara")
+
+	vox_face_colonel
+		name = "Colonel"
+		icon_state = "vox_colonel"
+		species_allowed = list("Vox")
+		do_colouration = 0
+
+	vox_face_fu
+		name = "Fu"
+		icon_state = "vox_fu"
+		species_allowed = list("Vox")
+		do_colouration = 0
+
+	vox_face_neck
+		name = "Neck Quills"
+		icon_state = "vox_neck"
+		species_allowed = list("Vox")
+		do_colouration = 0
+
+	vox_face_beard
+		name = "Quill Beard"
+		icon_state = "vox_beard"
+		species_allowed = list("Vox")
+		do_colouration = 0
 
 //skin styles - WIP
 //going to have to re-integrate this with surgery

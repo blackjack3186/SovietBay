@@ -6,7 +6,7 @@
 	name = "traitor"
 	config_tag = "traitor"
 	restricted_jobs = list("Cyborg")//They are part of the AI if he is traitor so are they, they use to get double chances
-	protected_jobs = list("Security Officer", "Warden", "Detective", "Internal Affairs Agent", "Head of Security", "Captain")//AI", Currently out of the list as malf does not work for shit
+	protected_jobs = list("Internal Affairs Agent", "Head of Security")//AI", Currently out of the list as malf does not work for shit
 	required_players = 0
 	required_enemies = 1
 	recommended_enemies = 4
@@ -45,7 +45,7 @@
 		num_traitors = max(1, min(num_players(), traitors_possible))
 
 	for(var/datum/mind/player in possible_traitors)
-		for(var/job in restricted_jobs)
+		for(var/job in protected_jobs)
 			if(player.assigned_role == job)
 				possible_traitors -= player
 

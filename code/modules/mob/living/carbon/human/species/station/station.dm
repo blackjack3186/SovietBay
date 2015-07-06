@@ -10,7 +10,29 @@
 	Человечество ведёт активную экспансию в новых мирах и постоянно ввязывается в войны то с кланами воксов, то с мятежными унатхами."
 
 	flags = CAN_JOIN | HAS_SKIN_TONE | HAS_LIPS | HAS_UNDERWEAR | HAS_EYE_COLOR
+/*
+/datum/species/clown
+	name = "Clown"
+	name_plural = "Clowns"
+	language = "Sol Common"
+	primitive = /mob/living/carbon/monkey
+	unarmed_types = list(/datum/unarmed_attack/stomp, /datum/unarmed_attack/kick, /datum/unarmed_attack/punch, /datum/unarmed_attack/bite)
+	icobase = 'icons/mob/human_races/r_clown.dmi'
+	deform = 'icons/mob/human_races/r_def_clown.dmi'
+	blurb = "HONK!"
+	flags = CAN_JOIN | IS_WHITELISTED | HAS_UNDERWEAR | HAS_EYE_COLOR
 
+/datum/species/mime
+	name = "Mime"
+	name_plural = "Mimes"
+	language = "Sol Common"
+	primitive = /mob/living/carbon/monkey
+	unarmed_types = list(/datum/unarmed_attack/stomp, /datum/unarmed_attack/kick, /datum/unarmed_attack/punch, /datum/unarmed_attack/bite)
+	icobase = 'icons/mob/human_races/r_mime.dmi'
+	deform = 'icons/mob/human_races/r_def_mime.dmi'
+	blurb = "..."
+	flags = CAN_JOIN | IS_WHITELISTED | HAS_UNDERWEAR | HAS_EYE_COLOR
+*/
 /datum/species/unathi
 	name = "Unathi"
 	name_plural = "Unathi"
@@ -234,7 +256,8 @@
 	blood_color = "#1F181F"
 	flesh_color = "#575757"
 
-	has_organ = list() //TODO: Positronic brain.
+	has_organ = list("cooler" = /datum/organ/internal/cooler) //TODO: Positronic brain.
+	inherent_verbs = list(/mob/living/carbon/human/proc/cooler_off)
 
 /datum/species/machine/handle_death(var/mob/living/carbon/human/H)
 	..()
@@ -242,3 +265,19 @@
 		H.h_style = ""
 		spawn(100)
 			if(H) H.update_hair()
+
+/datum/species/grey
+	name = "Grey"
+	icobase = 'icons/mob/human_races/r_grey.dmi'
+	deform = 'icons/mob/human_races/r_def_grey.dmi'
+	darksight = 5 // BOOSTED from 2
+	eyes = "grey_eyes_s"
+
+	primitive = /mob/living/carbon/monkey // TODO
+
+	flags = CAN_JOIN | IS_WHITELISTED | HAS_LIPS | HAS_UNDERWEAR | HAS_EYE_COLOR
+
+	// Both must be set or it's only a 45% chance of manifesting.
+	default_mutations = list(mRemotetalk)
+	default_block_names = list("REMOTETALK")
+	inherent_verbs = list(/mob/living/carbon/human/proc/commune)

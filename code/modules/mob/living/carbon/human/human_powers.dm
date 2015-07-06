@@ -160,7 +160,7 @@
 			M.gib()
 
 /mob/living/carbon/human/proc/commune()
-	set category = "Abilities"
+	set category = "IC"
 	set name = "Commune with creature"
 	set desc = "Send a telepathic message to an unlucky recipient."
 
@@ -219,3 +219,16 @@
 		M << "\green You hear a strange, alien voice in your head... \italic [msg]"
 		src << "\green You said: \"[msg]\" to [M]"
 	return
+
+/mob/living/carbon/human/proc/cooler_off()
+	set category = "System Control"
+	set name = "Toggle Cooler"
+	set desc = "Enable or disable cooler"
+	for(var/datum/organ/internal/cooler/C in src.internal_organs)
+		if(C)
+			if(C.enabled)
+				src << "You disable cooler"
+				C.enabled = 0
+			else
+				src << "You enable cooler"
+				C.enabled = 1
