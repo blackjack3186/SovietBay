@@ -79,6 +79,9 @@
 		"You shiver suddely.",
 		"Your chilly flesh stands out in goosebumps."
 		)
+	var/list/default_mutations = list()
+	var/list/default_blocks = list() // Don't touch.
+	var/list/default_block_names = list() // Use this instead, using the names from setupgame.dm
 
 	// HUD data vars.
 	var/datum/hud_data/hud

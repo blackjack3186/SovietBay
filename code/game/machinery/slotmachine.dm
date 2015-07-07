@@ -7,7 +7,7 @@ var/datum/announcement/minor/slotmachine_announcement = new(do_log = 0)
 	anchored = 1
 	density = 1
 //	mats = 10
-	var/money = 25000
+	var/money = 1000000
 	var/plays = 0
 	var/working = 0
 	var/balance = 0
@@ -62,17 +62,21 @@ var/datum/announcement/minor/slotmachine_announcement = new(do_log = 0)
 					else if (roll > 1 && roll <= 10)
 						for(var/mob/O in hearers(src, null))
 							O.show_message(text("<b>[]</b> says, 'Big Winner! You win five thousand credits!'", src), 1)
-						usr.mind.initial_account.money += 5000
-						src.money -= 5000
+						usr.mind.initial_account.money += 100000
+						src.money -= 100000
 					else if (roll > 10 && roll <= 100)
 						for(var/mob/O in hearers(src, null))
 							O.show_message(text("<b>[]</b> says, 'Winner! You win five hundred credits!'", src), 1)
-						usr.mind.initial_account.money += 500
-						src.money -= 500
+						usr.mind.initial_account.money += 10000
+						src.money -= 10000
 					else if (roll > 100 && roll <= 1000)
 						usr << "\blue You win a free game!"
-						usr.mind.initial_account.money += 5
-						src.money -= 5
+						usr.mind.initial_account.money += 50
+						src.money -= 50
+					else if (roll > 1000 && roll <= 3000)
+						usr << "\blue You win a free game!"
+						usr.mind.initial_account.money += 10
+						src.money -= 10
 					else
 						usr << "\red No luck!"
 					src.working = 0

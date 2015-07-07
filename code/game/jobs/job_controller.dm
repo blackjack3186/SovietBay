@@ -505,10 +505,10 @@ var/global/datum/controller/occupations/job_master
 			else if(H.species.name == "Vox")
 				H.equip_to_slot_or_del(new /obj/item/clothing/mask/breath(H), slot_wear_mask)
 				if(!H.r_hand)
-					H.equip_to_slot_or_del(new /obj/item/weapon/tank/nitrogen(H), slot_r_hand)
+					H.equip_to_slot_or_del(new /obj/item/weapon/tank/nitrogen/voxtank(H), slot_r_hand)
 					H.internal = H.r_hand
 				else if (!H.l_hand)
-					H.equip_to_slot_or_del(new /obj/item/weapon/tank/nitrogen(H), slot_l_hand)
+					H.equip_to_slot_or_del(new /obj/item/weapon/tank/nitrogen/voxtank(H), slot_l_hand)
 					H.internal = H.l_hand
 				H.internals.icon_state = "internal1"
 

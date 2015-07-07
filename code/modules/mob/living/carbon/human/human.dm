@@ -53,7 +53,11 @@
 		var/eta_status = emergency_shuttle.get_status_panel_eta()
 		if(eta_status)
 			stat(null, eta_status)
-
+	var/datum/organ/internal/cooler/C = internal_organs_by_name["cooler"]
+	if(C)
+		stat("Charge", "[src.nutrition / 4]%")
+		stat("Cooler", C.enabled ? "enable":"disable")
+		stat("Temperature", "[src.bodytemperature] K")
 	if (client.statpanel == "Status")
 
 		if (internal)
@@ -1132,6 +1136,9 @@
 
 	if(species.default_language)
 		add_language(species.default_language)
+
+	if((src.species.default_mutations.len > 0) || (src.species.default_blocks.len > 0))
+		src.do_deferred_species_setup = 1
 
 	if(species.base_color && default_colour)
 		//Apply colour.
