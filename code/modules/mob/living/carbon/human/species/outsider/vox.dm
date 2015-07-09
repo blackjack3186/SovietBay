@@ -1,6 +1,7 @@
 /datum/species/vox
 	name = "Vox"
 	name_plural = "Vox"
+	gender = 0
 	icobase = 'icons/mob/human_races/r_vox.dmi'
 	deform = 'icons/mob/human_races/r_def_vox.dmi'
 	default_language = "Vox-pidgin"

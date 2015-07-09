@@ -54,10 +54,30 @@
 			return ..(freq, level)
 	return -1
 
+/obj/item/device/radio/headset/alt
+	name = "bowman headset"
+	desc = "An updated, modular intercom that fits over the head. Takes encryption keys."
+	c_gender = C_UNISEX
+	icon_state = "com_headset_alt"
+	item_state = "com_headset_alt"
+
+/obj/item/device/radio/headset/earset
+	name = "Music Headset"
+	icon_state = "headset"
+	item_state = "earset"
+	slot_flags = SLOT_EARS | SLOT_TWOEARS
+
 /obj/item/device/radio/headset/syndicate
 	origin_tech = "syndicate=3"
 	syndie = 1
 	ks1type = /obj/item/device/encryptionkey/syndicate
+
+/obj/item/device/radio/headset/syndicate/alt
+	name = "syndicate headset"
+	desc = "A syndicate headset that can be used to hear all radio frequencies."
+	c_gender = C_UNISEX
+	icon_state = "syndie_headset"
+	item_state = "syndie_headset"
 
 /obj/item/device/radio/headset/binary
 	origin_tech = "syndicate=3"
@@ -69,6 +89,13 @@
 	icon_state = "sec_headset"
 	item_state = "headset"
 	ks2type = /obj/item/device/encryptionkey/headset_sec
+
+/obj/item/device/radio/headset/headset_sec/alt
+	name = "security bowman headset"
+	desc = "This is used by your elite security force."
+	c_gender = C_UNISEX
+	icon_state = "sec_headset_alt"
+	item_state = "sec_headset_alt"
 
 /obj/item/device/radio/headset/headset_eng
 	name = "engineering radio headset"
@@ -90,6 +117,11 @@
 	icon_state = "med_headset"
 	item_state = "headset"
 	ks2type = /obj/item/device/encryptionkey/headset_med
+
+/obj/item/device/radio/headset/headset_med/alt
+	c_gender = C_UNISEX
+	icon_state = "med_headset_alt"
+	item_state = "med_headset_alt"
 
 /obj/item/device/radio/headset/headset_sci
 	name = "science radio headset"
@@ -119,6 +151,13 @@
 	item_state = "headset"
 	ks2type = /obj/item/device/encryptionkey/heads/captain
 
+/obj/item/device/radio/headset/heads/captain/alt
+	name = "\proper the captain's bowman headset"
+	desc = "The headset of the boss."
+	c_gender = C_UNISEX
+	icon_state = "com_headset_alt"
+	item_state = "com_headset_alt"
+
 /obj/item/device/radio/headset/heads/ai_integrated //No need to care about icons, it should be hidden inside the AI anyway.
 	name = "\improper AI subspace transceiver"
 	desc = "Integrated AI radio transceiver."
@@ -147,6 +186,13 @@
 	icon_state = "com_headset"
 	item_state = "headset"
 	ks2type = /obj/item/device/encryptionkey/heads/hos
+
+/obj/item/device/radio/headset/heads/hos/alt
+	name = "\proper the head of security's bowman headset"
+	desc = "The headset of the man in charge of keeping order and protecting the station."
+	c_gender = C_UNISEX
+	icon_state = "com_headset_alt"
+	item_state = "com_headset_alt"
 
 /obj/item/device/radio/headset/heads/ce
 	name = "chief engineer's headset"
@@ -204,6 +250,13 @@
 	item_state = "headset"
 	freerange = 1
 	ks2type = /obj/item/device/encryptionkey/ert
+
+/obj/item/device/radio/headset/ert/alt
+	name = "\proper emergency response team's bowman headset"
+	desc = "The headset of the boss."
+	c_gender = C_UNISEX
+	icon_state = "com_headset_alt"
+	item_state = "com_headset_alt"
 
 /obj/item/device/radio/headset/attackby(obj/item/weapon/W as obj, mob/user as mob)
 //	..()

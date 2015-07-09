@@ -780,3 +780,9 @@ var/list/be_special_flags = list(
 #define BOMBCAP_HEAVY_RADIUS (max_explosion_range/2)
 #define BOMBCAP_LIGHT_RADIUS max_explosion_range
 #define BOMBCAP_FLASH_RADIUS (max_explosion_range*1.5)
+
+// Cloth gender defines
+#define C_CHANGE	0
+#define C_MALE		1
+#define C_FEMALE	2
+#define C_UNISEX	3

@@ -1,7 +1,7 @@
 /datum/species/golem
 	name = "Golem"
 	name_plural = "golems"
-
+	gender = 0
 	icobase = 'icons/mob/human_races/r_golem.dmi'
 	deform = 'icons/mob/human_races/r_golem.dmi'
 

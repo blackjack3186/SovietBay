@@ -2,6 +2,7 @@
 	name = "Human"
 	name_plural = "Humans"
 	language = "Sol Common"
+	gender = 1
 	primitive = /mob/living/carbon/monkey
 	unarmed_types = list(/datum/unarmed_attack/stomp, /datum/unarmed_attack/kick, /datum/unarmed_attack/punch, /datum/unarmed_attack/bite)
 	blurb = "Человечество. Самая многочисленная и самая сильная раса во всём Млечном Пути. \
@@ -154,8 +155,9 @@
 /datum/species/diona
 	name = "Diona"
 	name_plural = "Dionaea"
+	gender = 0
 	icobase = 'icons/mob/human_races/r_diona.dmi'
-	deform = 'icons/mob/human_races/r_def_plant.dmi'
+	deform = 'icons/mob/human_races/r_def_diona.dmi'
 	language = "Rootspeak"
 	unarmed_types = list(/datum/unarmed_attack/stomp, /datum/unarmed_attack/kick, /datum/unarmed_attack/diona)
 	primitive = /mob/living/carbon/alien/diona
@@ -227,7 +229,7 @@
 /datum/species/machine
 	name = "Machine"
 	name_plural = "machines"
-
+	gender = 0
 	icobase = 'icons/mob/human_races/r_machine.dmi'
 	deform = 'icons/mob/human_races/r_machine.dmi'
 	language = "Tradeband"
@@ -268,6 +270,7 @@
 
 /datum/species/grey
 	name = "Grey"
+	gender = 0
 	icobase = 'icons/mob/human_races/r_grey.dmi'
 	deform = 'icons/mob/human_races/r_def_grey.dmi'
 	darksight = 5 // BOOSTED from 2

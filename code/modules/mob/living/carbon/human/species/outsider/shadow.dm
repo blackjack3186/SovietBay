@@ -1,7 +1,7 @@
 /datum/species/shadow
 	name = "Shadow"
 	name_plural = "shadows"
-
+	gender = 0
 	icobase = 'icons/mob/human_races/r_shadow.dmi'
 	deform = 'icons/mob/human_races/r_shadow.dmi'
 

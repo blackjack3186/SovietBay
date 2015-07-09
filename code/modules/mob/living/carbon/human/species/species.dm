@@ -20,6 +20,7 @@
 	var/tail                                             // Name of tail image in species effects icon file.
 	var/race_key = 0       	                             // Used for mob icon cache string.
 	var/icon/icon_template                               // Used for mob icon generation for non-32x32 species.
+	var/gender = 0										 // Used for cloth, 1 - have different gender sprites, 0 - haven`t
 
 	// Language/culture vars.
 	var/default_language = "Galactic Common" // Default language is used when 'say' is used without modifiers.

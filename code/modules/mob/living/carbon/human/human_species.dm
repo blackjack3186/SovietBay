@@ -29,6 +29,10 @@
 	h_style = "blue IPC screen"
 	..(new_loc, "Machine")
 
+/mob/living/carbon/human/grey/New(var/new_loc)
+	h_style = "bald"
+	..(new_loc, "Grey")
+/*
 /mob/living/carbon/human/clown/New(var/new_loc)
 	h_style = "Bald"
 	..(new_loc, "Clown")
@@ -36,3 +40,4 @@
 /mob/living/carbon/human/mime/New(var/new_loc)
 	h_style = "Bald"
 	..(new_loc, "Mime")
+	*/

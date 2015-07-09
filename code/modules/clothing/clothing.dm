@@ -11,6 +11,17 @@
 	*/
 	var/list/sprite_sheets_refit = null
 
+	/*
+	Now we have different sprites for man and woman body. But not all sprites can be combined with some kind of bodies.
+	So we shoud make a check for gender.
+	C_CHANGE 0 - changing sprites between men and women
+	C_MALE 1 - only for men
+	C_FEMALE 2 - only for women
+	C_UNISEX 3 - one sprite for both men and women
+	Also some races have identical bodies for any gender, like vox and diona, so we should have additional check of species.gender(0 = identical)
+	*/
+/obj/item/var/c_gender = C_MALE	//most sprites were made for men
+
 //Updates the icons of the mob wearing the clothing item, if any.
 /obj/item/clothing/proc/update_clothing_icon()
 	return
@@ -41,6 +52,24 @@
 			if(!wearable && !(slot in list(slot_l_store, slot_r_store, slot_s_store)))
 				H << "<span class='danger'>Your species cannot wear [src].</span>"
 				return 0
+
+	if(ishuman(M))
+
+		// identical bodies race stuff
+		if(M:species && !M:species.gender)		//if identical bodies
+			if(c_gender == C_FEMALE)			//and cloth is for woman
+				M << "<span class='danger'>Your species cannot wear [src].</span>"
+				return 0
+
+		switch(c_gender)
+			if(C_MALE)							//if man cloth
+				if(M:gender == "female")		//and used for woman body
+					M << "<span class='danger'>Your cannot wear [src], it`s too big for you.</span>"
+					return 0
+			if(C_FEMALE)						//if woman cloth
+				if(M:gender == "male")			//and used for man body
+					M << "<span class='danger'>Your cannot wear [src], it`s too small for you.</span>"
+					return 0
 	return 1
 
 /obj/item/clothing/proc/refit_for_species(var/target_species)
@@ -93,6 +122,9 @@
 // Ears: headsets, earmuffs and tiny objects
 /obj/item/clothing/ears
 	name = "ears"
+	icon = 'icons/obj/clothing/ears.dmi'
+	icon_state = "earmuffs"
+	c_gender = C_CHANGE
 	w_class = 1.0
 	throwforce = 2
 	slot_flags = SLOT_EARS
@@ -157,6 +189,11 @@
 	item_state = "earmuffs"
 	slot_flags = SLOT_EARS | SLOT_TWOEARS
 
+/obj/item/clothing/ears/earmuffs/tribblemuffs
+	icon_state = "tribblemuffs"
+	item_state = "tribblemuffs"
+	c_gender = C_UNISEX
+
 ///////////////////////////////////////////////////////////////////////
 //Glasses
 /*
@@ -174,6 +211,7 @@ BLIND     // can't see anything
 	w_class = 2.0
 	flags = GLASSESCOVERSEYES
 	slot_flags = SLOT_EYES
+	c_gender = C_CHANGE
 	var/vision_flags = 0
 	var/darkness_view = 0//Base human is 2
 	var/invisa_view = 0
@@ -191,6 +229,7 @@ BLIND     // can't see anything
 	gender = PLURAL //Carn: for grammarically correct text-parsing
 	w_class = 2.0
 	icon = 'icons/obj/clothing/gloves.dmi'
+	c_gender = C_CHANGE
 	siemens_coefficient = 0.50
 	var/wired = 0
 	var/obj/item/weapon/cell/cell = 0
@@ -246,7 +285,7 @@ BLIND     // can't see anything
 	body_parts_covered = HEAD
 	slot_flags = SLOT_HEAD
 	w_class = 2.0
-
+	c_gender = C_UNISEX
 	var/light_overlay = "helmet_light"
 	var/light_applied
 	var/brightness_on
@@ -330,6 +369,7 @@ BLIND     // can't see anything
 /obj/item/clothing/mask
 	name = "mask"
 	icon = 'icons/obj/clothing/masks.dmi'
+	c_gender = C_CHANGE
 	body_parts_covered = HEAD
 	slot_flags = SLOT_MASK
 	body_parts_covered = FACE|EYES
@@ -349,6 +389,7 @@ BLIND     // can't see anything
 	name = "shoes"
 	icon = 'icons/obj/clothing/shoes.dmi'
 	desc = "Comfortable-looking shoes."
+	c_gender = C_CHANGE
 	gender = PLURAL //Carn: for grammarically correct text-parsing
 	siemens_coefficient = 0.9
 	body_parts_covered = FEET
@@ -373,6 +414,7 @@ BLIND     // can't see anything
 /obj/item/clothing/suit
 	icon = 'icons/obj/clothing/suits.dmi'
 	name = "suit"
+	c_gender = C_CHANGE
 	var/fire_resist = T0C+100
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
 	allowed = list(/obj/item/weapon/tank/emergency_oxygen)
@@ -392,6 +434,7 @@ BLIND     // can't see anything
 /obj/item/clothing/under
 	icon = 'icons/obj/clothing/uniforms.dmi'
 	name = "under"
+	c_gender = C_CHANGE
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
 	permeability_coefficient = 0.90
 	slot_flags = SLOT_ICLOTHING

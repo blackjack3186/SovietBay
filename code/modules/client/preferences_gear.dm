@@ -1162,3 +1162,10 @@ var/global/list/gear_datums = list()
 	cost = 1
 	sort_category = "ears"
 	whitelisted = "Skrell"
+
+/datum/gear/skrell_xilobeads
+	display_name = "skrell beads"
+	path = /obj/item/clothing/ears/skrell/qokkri
+	cost = 1
+	sort_category = "ears"
+	whitelisted = "Skrell"

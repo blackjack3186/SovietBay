@@ -671,17 +671,6 @@
 	icon = 'icons/obj/custom_items.dmi'
 	icon_state = "chal_appara_1"
 
-//////////// Earpieces ////////////////
-
-////////////////////////// Skrellian Tailwear - Qokkri Xilo - Paradoxon /////////////
-
-/obj/item/clothing/ears/fluff/qokkri
-	name = "Skrellian Tailwear"
-	desc = "An ensemble of sophisticated jewels and bands, most likely belonging to a scientific Skrell."
-	icon_state = "xilobeads"
-	icon = 'icons/obj/custom_items.dmi'
-	item_state = "xilobeads"
-
 //////////// Eye Wear ////////////
 
 /obj/item/clothing/glasses/meson/fluff/book_berner_1 //asanadas: Book Berner
