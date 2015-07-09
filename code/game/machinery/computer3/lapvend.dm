@@ -329,6 +329,8 @@
 	if(access_cent_specops in C.access)
 		newlap.spawn_files += (/datum/file/camnet_key/creed)
 	newlap.spawn_files += (/datum/file/program/arcade)
+	newlap.spawn_files += (/datum/file/program/worms)
+	newlap.spawn_files += (/datum/file/program/zuma)
 	newlap.spawn_files += (/datum/file/camnet_key/entertainment)
 	//Atlantis: Each laptop gets "invisible" program/security - REQUIRED for camnetkeys to work.
 	newlap.spawn_files += (/datum/file/program/security/hidden)

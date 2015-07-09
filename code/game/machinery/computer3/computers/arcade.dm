@@ -178,3 +178,47 @@
 		computer.updateUsrDialog()
 	blocked = 0
 	return
+
+/datum/file/program/worms
+	name = "Bad Eggs 2"
+	desc = "The best online flash worms parody with multiplayer."
+	active_state = "generic"
+
+/datum/file/program/worms/interact()
+	if(!interactable())
+		return
+	var/dat = \
+	{"
+	<object height="600" width="800" align="middle"" classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0">
+	<param name="movie" value="http://www8.agame.com/mirror/flash/b/BadEggsOnline/BadEggsOnline2Loader.swf?gp=1" />
+	<param name="base" value="http://www8.agame.com/mirror/flash/b/BadEggsOnline/"/>
+	<param name="quality" value="high"/>
+	<param name="allowfullscreen" value="false"/>
+	<param name="wmode" value="direct"/>
+	<embed src="http://www8.agame.com/mirror/flash/b/BadEggsOnline/BadEggsOnline2Loader.swf?gp=1" height="600" width="800" align="middle" type="application/x-shockwave-flash" pluginspage="http://www.adobe.com/go/getflashplayer" base="http://www8.agame.com/mirror/flash/b/BadEggsOnline/" quality="high" allowfullscreen="false" wmode="direct" />
+	</object>
+	"}
+	popup.set_content(dat)
+	popup.open()
+
+/datum/file/program/zuma
+	name = "Mystic India Pop"
+	desc = "Flash zuma parody."
+	active_state = "generic"
+
+/datum/file/program/zuma/interact()
+	if(!interactable())
+		return
+	var/dat = \
+	{"
+	<object height="600" width="800" align="middle"" classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0">
+	<param name="movie" value="http://www8.agame.com/games/flash/m/mystic_india_pop/mystic_india_pop.swf?gp=1" />
+	<param name="base" value="http://www8.agame.com/games/flash/m/mystic_india_pop/"/>
+	<param name="quality" value="high"/>
+	<param name="allowfullscreen" value="false"/>
+	<param name="wmode" value="direct"/>
+	<embed src="http://www8.agame.com/games/flash/m/mystic_india_pop/mystic_india_pop.swf?gp=1" height="600" width="800" align="middle" type="application/x-shockwave-flash" pluginspage="http://www.adobe.com/go/getflashplayer" base="http://www8.agame.com/games/flash/m/mystic_india_pop/" quality="high" allowfullscreen="false" wmode="direct" />
+	</object>
+	"}
+	popup.set_content(dat)
+	popup.open()
